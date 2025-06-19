@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="select-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Select Component</h1>
+      <p>Componente web personalizado para crear menús desplegables con funcionalidad de selección y opciones de personalización completa. Perfecto para formularios, filtros y selección de opciones.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>Controlable por JavaScript</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Múltiples temas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+  
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Select básico -->
+        <div class="example">
+          <h3 class="example-title">Select básico con opciones simples</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <select-component id="select-categorias">
+                  <details class="select-component" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Selecciona una categoría</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="electronica" data-select-option>Electrónica</li>
+                      <li class="select-component-dropdown-option" data-index="1" data-value="ropa" data-select-option>Ropa</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="hogar" data-select-option>Hogar</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="deportes" data-select-option>Deportes</li>
+                    </ul>
+                  </details>
+                </select-component>
+                
+                <div class="example-controls">
+                  <button id="select-ropa" class="button-action-primary">Seleccionar "Ropa" mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="select-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="select-component/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;select-component&gt;
+  &lt;details class="select-component" data-select-details&gt;
+    &lt;summary class="select-component-button"&gt;
+      &lt;span data-select-label&gt;Selecciona una categoría&lt;/span&gt;
+      &lt;span class="select-component-button-asset"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;ul class="select-component-dropdown"&gt;
+      &lt;li data-index="0" data-value="electronica" data-select-option&gt;
+        Electrónica
+      &lt;/li&gt;
+      &lt;li data-index="1" data-value="ropa" data-select-option&gt;
+        Ropa
+      &lt;/li&gt;
+      &lt;!-- Más opciones... --&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Select con cierre automático -->
+        <div class="example">
+          <h3 class="example-title">Select con cierre automático</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <select-component id="select-paises" data-close-dropdown-after-selected>
+                  <details class="select-component" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Selecciona un país</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="es" data-select-option>España</li>
+                      <li class="select-component-dropdown-option" data-index="1" data-value="mx" data-select-option>México</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="ar" data-select-option>Argentina</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="cl" data-select-option>Chile</li>
+                      <li class="select-component-dropdown-option" data-index="4" data-value="co" data-select-option>Colombia</li>
+                    </ul>
+                  </details>
+                </select-component>
+                
+                <div class="example-controls">
+                  <button id="select-argentina" class="button-action-primary">Seleccionar "Argentina" mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Select con cierre automático --&gt;
+&lt;select-component data-close-dropdown-after-selected&gt;
+  &lt;details class="select-component" data-select-details&gt;
+    &lt;summary class="select-component-button"&gt;
+      &lt;span data-select-label&gt;Selecciona un país&lt;/span&gt;
+      &lt;span class="select-component-button-asset"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;ul class="select-component-dropdown"&gt;
+      &lt;li data-index="0" data-value="es" data-select-option&gt;
+        España
+      &lt;/li&gt;
+      &lt;!-- Más opciones... --&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Select con opción preseleccionada -->
+        <div class="example">
+          <h3 class="example-title">Select con opción preseleccionada</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <select-component id="select-nivel">
+                  <details class="select-component" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Nivel de experiencia</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="principiante" data-select-option>Principiante</li>
+                      <li class="select-component-dropdown-option selected" data-index="1" data-value="intermedio" data-select-option>Intermedio</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="avanzado" data-select-option>Avanzado</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="experto" data-select-option>Experto</li>
+                    </ul>
+                  </details>
+                </select-component>
+                
+                <div class="example-controls">
+                  <button id="select-avanzado" class="button-action-primary">Seleccionar "Avanzado" mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Select con opción preseleccionada --&gt;
+&lt;select-component&gt;
+  &lt;details class="select-component" data-select-details&gt;
+    &lt;summary class="select-component-button"&gt;
+      &lt;span data-select-label&gt;Nivel de experiencia&lt;/span&gt;
+      &lt;span class="select-component-button-asset"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;ul class="select-component-dropdown"&gt;
+      &lt;li data-index="0" data-value="principiante" data-select-option&gt;
+        Principiante
+      &lt;/li&gt;
+      &lt;li class="selected" data-index="1" data-value="intermedio" 
+          data-select-option&gt;
+        Intermedio
+      &lt;/li&gt;
+      &lt;!-- Más opciones... --&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 4: Select con diferentes estilos -->
+        <div class="example">
+          <h3 class="example-title">Select con diferentes estilos</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <h4 style="margin-top: 0; color: var(--component-accent);">Estilo Material</h4>
+                <select-component id="select-material">
+                  <details class="select-component select-material" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Selecciona un color</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="rojo" data-select-option>Rojo</li>
+                      <li class="select-component-dropdown-option" data-index="1" data-value="verde" data-select-option>Verde</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="azul" data-select-option>Azul</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="amarillo" data-select-option>Amarillo</li>
+                    </ul>
+                  </details>
+                </select-component>
+
+                <h4 style="margin-top: 20px; color: var(--component-accent);">Estilo Redondeado</h4>
+                <select-component id="select-rounded">
+                  <details class="select-component select-rounded" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Selecciona un tamaño</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="s" data-select-option>Pequeño (S)</li>
+                      <li class="select-component-dropdown-option" data-index="1" data-value="m" data-select-option>Mediano (M)</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="l" data-select-option>Grande (L)</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="xl" data-select-option>Extra Grande (XL)</li>
+                    </ul>
+                  </details>
+                </select-component>
+
+                <h4 style="margin-top: 20px; color: var(--component-accent);">Estilo Oscuro</h4>
+                <select-component id="select-dark">
+                  <details class="select-component select-dark" data-select-details>
+                    <summary class="select-component-button">
+                      <span class="select-component-button-label" data-select-label>Selecciona un idioma</span>
+                      <span class="select-component-button-asset">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="non-zero" d="M13.069 5.157L8.384 9.768a.546.546 0 0 1-.768 0L2.93 5.158a.552.552 0 0 0-.771 0a.53.53 0 0 0 0 .759l4.684 4.61a1.65 1.65 0 0 0 2.312 0l4.684-4.61a.53.53 0 0 0 0-.76a.552.552 0 0 0-.771 0"/></svg>
+                      </span>
+                    </summary>
+                    <ul class="select-component-dropdown">
+                      <li class="select-component-dropdown-option" data-index="0" data-value="es" data-select-option>Español</li>
+                      <li class="select-component-dropdown-option" data-index="1" data-value="en" data-select-option>Inglés</li>
+                      <li class="select-component-dropdown-option" data-index="2" data-value="fr" data-select-option>Francés</li>
+                      <li class="select-component-dropdown-option" data-index="3" data-value="de" data-select-option>Alemán</li>
+                    </ul>
+                  </details>
+                </select-component>
+              </div>
+              
+              <div class="example-code">
+                <h4>Personalización con CSS</h4>
+                <pre><code class="language-css">/* Estilo Material */
+.select-component-page .select-component.select-material {
+  --select-padding: 12px 16px;
+  --select-border: none;
+  --select-border-radius: 4px;
+  --select-background-color: rgba(255, 255, 255, 0.06);
+  --select-dropdown-border: none;
+  --select-dropdown-border-radius: 4px;
+  --select-dropdown-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo Redondeado */
+.select-component-page .select-component.select-rounded {
+  --select-border-radius: 50px;
+  --select-padding: 10px 20px;
+  --select-dropdown-border-radius: 8px;
+}
+
+/* Estilo Oscuro */
+.select-component-page .select-component.select-dark {
+  --select-background-color: rgba(0, 0, 0, 0.4);
+  --select-border: 1px solid rgba(255, 255, 255, 0.1);
+  --select-border-radius: 4px;
+  --select-dropdown-background-color: #333;
+  --select-dropdown-border: 1px solid rgba(255, 255, 255, 0.1);
+  --select-dropdown-border-radius: 4px;
+  --select-dropdown-option-selected-background-color: 
+    rgba(233, 30, 99, 0.3);
+}</code></pre>
+
+                <h4>HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Ejemplo con estilo Material --&gt;
+&lt;select-component&gt;
+  &lt;details class="select-component select-material" 
+           data-select-details&gt;
+    &lt;!-- Contenido del select... --&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;
+
+&lt;!-- Ejemplo con estilo Redondeado --&gt;
+&lt;select-component&gt;
+  &lt;details class="select-component select-rounded" 
+           data-select-details&gt;
+    &lt;!-- Contenido del select... --&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;
+
+&lt;!-- Ejemplo con estilo Oscuro --&gt;
+&lt;select-component&gt;
+  &lt;details class="select-component select-dark" 
+           data-select-details&gt;
+    &lt;!-- Contenido del select... --&gt;
+  &lt;/details&gt;
+&lt;/select-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/select-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  
+  <script src="index.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 1: Select categorías
+      const selectCategorias = document.querySelector('#select-categorias');
+      document.getElementById('select-ropa').addEventListener('click', function() {
+        selectCategorias.selectOptionByIndex(1); // Selecciona "Ropa" (índice 1)
+    });
+    
+      // Ejemplo 2: Select países
+      const selectPaises = document.querySelector('#select-paises');
+      document.getElementById('select-argentina').addEventListener('click', function() {
+        selectPaises.selectOptionByIndex(2); // Selecciona "Argentina" (índice 2)
+    });
+    
+      // Ejemplo 3: Select nivel
+      const selectNivel = document.querySelector('#select-nivel');
+      document.getElementById('select-avanzado').addEventListener('click', function() {
+      selectNivel.selectOptionByValue('avanzado');
+    });
+    
+    // Escuchar eventos de cambio en todos los selects
+    document.querySelectorAll('select-component').forEach(function(select) {
+      select.addEventListener('change', function(event) {
+        console.log('Opción seleccionada:', event.detail.value);
+        console.log('Índice de la opción:', event.detail.index);
+      });
+    });
+  });
+</script>
+</body>
+</html>

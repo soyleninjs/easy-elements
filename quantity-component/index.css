@@ -1,0 +1,102 @@
+quantity-component {
+  --max-width: 100px;
+  --height: 40px;
+  --border: 1px solid;
+  --border-radius: 0;
+  --button-width: 30px;
+  --button-background: white;
+  --button-color: black;
+  --button-background-hover: black;
+  --button-color-hover: white;
+  --button-transition: 0.3s;
+  --input-background: white;
+  --input-padding: 0 calc(var(--button-width) - 3px);
+  --input-font-family: sans-serif;
+  --input-font-size: 15px;
+  --input-font-weight: normal;
+  --input-line-height: normal;
+  --input-letter-spacing: normal;
+  --input-text-color: #000000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  overflow: hidden;
+}
+
+quantity-component * {
+  border: 0;
+  box-shadow: unset;
+  outline: 0;
+}
+
+.quantity-component-button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-width);
+  height: 100%;
+  background-color: var(--button-background);
+  padding: 0;
+  border: 0;
+  margin: 0;
+  color: var(--button-color);
+  box-shadow: unset;
+  cursor: pointer;
+  appearance: none;
+  transition: var(--button-transition);
+
+  &[disabled] {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--button-background-hover);
+      color: var(--button-color-hover);
+    }
+  }
+
+  &:active {
+    background-color: var(--button-background-hover);
+    color: var(--button-color-hover);
+  }
+}
+
+.quantity-component-button-minus {
+  left: 0;
+}
+
+.quantity-component-button-plus {
+  right: 0;
+}
+
+.quantity-component-input {
+  width: 100%;
+  height: 100%;
+  background-color: var(--input-background);
+  padding: var(--input-padding);
+  border: 0;
+  box-shadow: unset;
+  text-align: center;
+  font-family: var(--input-font-family);
+  font-weight: var(--input-font-weight);
+  font-size: var(--input-font-size);
+  line-height: var(--input-line-height);
+  letter-spacing: var(--input-letter-spacing);
+  color: var(--input-text-color);
+  appearance: none;
+}
+
+.quantity-component-input::-webkit-outer-spin-button,
+.quantity-component-input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}

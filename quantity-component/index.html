@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantity Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="quantity-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Quantity Component</h1>
+      <p>Componente web personalizado para crear controles de cantidad con botones de incremento y decremento, ideal para formularios, carritos de compra y cualquier interfaz que requiera selección numérica.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <span>Control intuitivo</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+            <line x1="4" y1="22" x2="4" y2="15"></line>
+          </svg>
+          <span>Validación incorporada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+  
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Control de cantidad básico -->
+        <div class="example">
+          <h3 class="example-title">Control de cantidad básico</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <quantity-component id="basic-quantity">
+      <button class="quantity-component-button quantity-component-button-minus" type="button" data-quantity-button-minus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2z"/></svg>
+      </button>
+      <input class="quantity-component-input" type="number" name="quantity" value="1" min="1" pattern="[0-9]*" data-quantity-input>
+      <button class="quantity-component-button quantity-component-button-plus" type="button" data-quantity-button-plus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5a1 1 0 0 1 1 1v5h5a1 1 0 0 1 0 2h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5V6a1 1 0 0 1 1-1z"/></svg>
+      </button>
+    </quantity-component>
+    
+    <div class="example-controls">
+                  <button id="set-quantity-3" class="button-action-primary">Establecer a 3</button>
+                  <button id="increment-quantity" class="button-action-primary">Incrementar</button>
+                  <button id="decrement-quantity" class="button-action-primary">Decrementar</button>
+    </div>
+    
+                <div id="basic-log" style="margin-top: 1rem; background-color: rgba(0, 0, 0, 0.2); padding: 0.75rem; border-radius: 4px;">
+                  El valor actual es: 1
+    </div>
+  </div>
+  
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="quantity-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="quantity-component/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;quantity-component&gt;
+  &lt;button class="quantity-component-button quantity-component-button-minus" 
+          type="button" data-quantity-button-minus&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;input class="quantity-component-input" 
+         type="number" 
+         name="quantity" 
+         value="1" 
+         min="1" 
+         pattern="[0-9]*" 
+         data-quantity-input&gt;
+  &lt;button class="quantity-component-button quantity-component-button-plus" 
+          type="button" data-quantity-button-plus&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/quantity-component&gt;</code></pre>
+
+                <h4>JavaScript</h4>
+                <pre><code class="language-javascript">// Seleccionar el componente
+const quantityComponent = document.querySelector('quantity-component');
+
+// Establecer el valor mediante JavaScript
+quantityComponent.dataset.value = 3;
+
+// Escuchar cambios en el valor
+quantityComponent.addEventListener('value:change', (event) => {
+  console.log('Nuevo valor:', event.detail.value);
+});</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Control de cantidad con valor mínimo 0 -->
+        <div class="example">
+          <h3 class="example-title">Control de cantidad con valor mínimo 0</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <quantity-component id="min-zero-quantity" class="quantity-material">
+      <button class="quantity-component-button quantity-component-button-minus" type="button" data-quantity-button-minus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2z"/></svg>
+      </button>
+                  <input class="quantity-component-input" type="number" name="quantity" value="1" min="0" pattern="[0-9]*" data-quantity-input>
+      <button class="quantity-component-button quantity-component-button-plus" type="button" data-quantity-button-plus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5a1 1 0 0 1 1 1v5h5a1 1 0 0 1 0 2h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5V6a1 1 0 0 1 1-1z"/></svg>
+      </button>
+    </quantity-component>
+    
+                <div class="example-controls">
+                  <button id="set-to-zero" class="button-action-primary">Establecer a 0</button>
+                </div>
+                
+                <p style="margin-top: 1rem;">
+                  Este ejemplo permite establecer la cantidad a cero. El botón de decrementar se desactiva automáticamente cuando se alcanza el valor mínimo.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;quantity-component class="quantity-material"&gt;
+  &lt;button class="quantity-component-button quantity-component-button-minus" 
+          type="button" data-quantity-button-minus&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;input class="quantity-component-input" 
+         type="number" 
+         name="quantity" 
+         value="1" 
+         min="0" 
+         pattern="[0-9]*" 
+         data-quantity-input&gt;
+  &lt;button class="quantity-component-button quantity-component-button-plus" 
+          type="button" data-quantity-button-plus&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/quantity-component&gt;</code></pre>
+
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">.quantity-material {
+  --max-width: 120px;
+  --height: 45px;
+  --border: none;
+  --border-radius: 4px;
+  --button-background: #f5f5f5;
+  --button-background-hover: #ff9800;
+  --button-color-hover: white;
+  --input-background: #f5f5f5;
+  --button-color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}</code></pre>
+              </div>
+            </div>
+    </div>
+  </div>
+  
+        <!-- Ejemplo 3: Control de cantidad con estilos redondeados -->
+        <div class="example">
+          <h3 class="example-title">Control de cantidad con estilos redondeados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <quantity-component id="rounded-quantity" class="quantity-rounded">
+      <button class="quantity-component-button quantity-component-button-minus" type="button" data-quantity-button-minus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2z"/></svg>
+      </button>
+                  <input class="quantity-component-input" type="number" name="quantity" value="1" min="1" pattern="[0-9]*" data-quantity-input>
+      <button class="quantity-component-button quantity-component-button-plus" type="button" data-quantity-button-plus>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5a1 1 0 0 1 1 1v5h5a1 1 0 0 1 0 2h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5V6a1 1 0 0 1 1-1z"/></svg>
+      </button>
+    </quantity-component>
+    
+                <pre id="event-log" style="margin-top: 1rem; background-color: rgba(0, 0, 0, 0.2); padding: 0.75rem; border-radius: 4px; font-size: 0.9rem;">Historial de eventos:
+Componente inicializado con valor: 1</pre>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;quantity-component class="quantity-rounded"&gt;
+  &lt;!-- Contenido del componente --&gt;
+&lt;/quantity-component&gt;</code></pre>
+
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">.quantity-rounded {
+  --max-width: 140px;
+  --height: 45px;
+  --border: 1px solid rgba(0, 188, 212, 0.5);
+  --border-radius: 50px;
+  --button-background: rgba(0, 0, 0, 0.2);
+  --button-background-hover: #00bcd4;
+  --button-color: #e0e0e0;
+  --button-color-hover: white;
+  --input-background: rgba(0, 0, 0, 0.1);
+  --input-text-color: #e0e0e0;
+}</code></pre>
+
+                <h4>Escuchando eventos</h4>
+                <pre><code class="language-javascript">const quantityComponent = document.querySelector('#rounded-quantity');
+const eventLog = document.querySelector('#event-log');
+
+quantityComponent.addEventListener('value:change', function(event) {
+  const newEntry = `Valor cambiado: ${event.detail.value}`;
+  eventLog.textContent += `\n${newEntry}`;
+});</code></pre>
+              </div>
+            </div>
+    </div>
+  </div>
+
+  <!-- Ejemplo 4: Integración con formularios -->
+        <div class="example">
+          <h3 class="example-title">Integración con formularios y estilos personalizados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <form id="product-form" style="background-color: rgba(0, 0, 0, 0.1); padding: 1.5rem; border-radius: 8px;">
+                  <div style="margin-bottom: 1rem;">
+        <label for="product-name">Nombre del producto:</label>
+                    <input type="text" id="product-name" name="product-name" value="Camiseta Premium" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; background-color: rgba(0, 0, 0, 0.2); border: 1px solid rgba(0, 188, 212, 0.3); color: var(--text-color); border-radius: 4px;">
+      </div>
+      
+                  <div style="margin-bottom: 1rem;">
+        <label for="product-quantity">Cantidad:</label>
+                    <quantity-component id="form-quantity" class="quantity-primary" style="margin-top: 0.5rem;">
+          <button class="quantity-component-button quantity-component-button-minus" type="button" data-quantity-button-minus>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12h14a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2z"/></svg>
+          </button>
+          <input class="quantity-component-input" id="product-quantity" type="number" name="product-quantity" value="1" min="1" pattern="[0-9]*" data-quantity-input>
+          <button class="quantity-component-button quantity-component-button-plus" type="button" data-quantity-button-plus>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5a1 1 0 0 1 1 1v5h5a1 1 0 0 1 0 2h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5V6a1 1 0 0 1 1-1z"/></svg>
+          </button>
+        </quantity-component>
+      </div>
+      
+                  <div style="margin-bottom: 1rem;">
+                    <label for="product-color">Color:</label>
+                    <select id="product-color" name="product-color" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; background-color: rgba(0, 0, 0, 0.2); border: 1px solid rgba(0, 188, 212, 0.3); color: var(--text-color); border-radius: 4px;">
+                      <option value="black">Negro</option>
+                      <option value="white">Blanco</option>
+                      <option value="blue">Azul</option>
+                      <option value="red">Rojo</option>
+                    </select>
+                  </div>
+                  
+                  <button type="button" id="submit-form" style="background-color: var(--component-primary); color: white; border: none; padding: 0.75rem 1rem; border-radius: 4px; cursor: pointer;">
+                    Añadir al carrito
+      </button>
+    </form>
+    
+                <div id="form-result" style="margin-top: 1rem; background-color: rgba(0, 0, 0, 0.2); padding: 0.75rem; border-radius: 4px; display: none;">
+                  Los datos del formulario aparecerán aquí al enviar.
+    </div>
+  </div>
+
+              <div class="example-code">
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">.quantity-primary {
+  --max-width: 130px;
+  --height: 42px;
+  --border: 1px solid var(--component-primary);
+  --border-radius: 5px;
+  --button-background: var(--component-primary);
+  --button-color: white;
+  --button-background-hover: var(--component-secondary);
+  --button-color-hover: white;
+  --input-background: rgba(0, 0, 0, 0.1);
+  --input-text-color: var(--text-color);
+}</code></pre>
+
+                <h4>Integración con formularios</h4>
+                <pre><code class="language-javascript">document.querySelector('#submit-form').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  const productName = document.querySelector('#product-name').value;
+  const quantity = document.querySelector('#form-quantity').dataset.value;
+  const color = document.querySelector('#product-color').value;
+  
+  const resultElement = document.querySelector('#form-result');
+  resultElement.style.display = 'block';
+  resultElement.innerHTML = `
+    <strong>Producto añadido:</strong><br>
+    Nombre: ${productName}<br>
+    Cantidad: ${quantity}<br>
+    Color: ${color}
+  `;
+  
+  // Aquí iría el código para enviar los datos al servidor
+});</code></pre>
+
+                <h4>Estilo alternativo (Dark)</h4>
+                <pre><code class="language-css">.quantity-dark {
+  --max-width: 120px;
+  --height: 40px;
+  --border: 1px solid rgba(0, 188, 212, 0.3);
+  --border-radius: 4px;
+  --button-background: #333;
+  --button-color: var(--component-primary);
+  --button-background-hover: var(--component-primary);
+  --button-color-hover: white;
+  --input-background: #333;
+  --input-text-color: var(--text-color);
+}</code></pre>
+              </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/quantity-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+    </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  <script src="index.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 1: Control básico
+      const basicQuantity = document.querySelector('#basic-quantity');
+      const basicLog = document.querySelector('#basic-log');
+    
+      document.querySelector('#set-quantity-3').addEventListener('click', function() {
+      basicQuantity.dataset.value = 3;
+        updateBasicLog();
+    });
+    
+      document.querySelector('#increment-quantity').addEventListener('click', function() {
+        basicQuantity.dataset.value = Number(basicQuantity.dataset.value) + 1;
+    });
+    
+      document.querySelector('#decrement-quantity').addEventListener('click', function() {
+      const currentValue = Number(basicQuantity.dataset.value);
+      if (currentValue > 1) {
+        basicQuantity.dataset.value = currentValue - 1;
+      }
+    });
+    
+    basicQuantity.addEventListener('value:change', function(event) {
+        updateBasicLog();
+      });
+      
+      function updateBasicLog() {
+        basicLog.textContent = `El valor actual es: ${basicQuantity.dataset.value}`;
+      }
+    
+      // Ejemplo 2: Valor mínimo 0
+      const minZeroQuantity = document.querySelector('#min-zero-quantity');
+      
+      document.querySelector('#set-to-zero').addEventListener('click', function() {
+      minZeroQuantity.dataset.value = 0;
+    });
+    
+      // Ejemplo 3: Control con estilos redondeados y eventos
+      const roundedQuantity = document.querySelector('#rounded-quantity');
+      const eventLog = document.querySelector('#event-log');
+    
+      roundedQuantity.addEventListener('value:change', function(event) {
+        const newEntry = `Valor cambiado: ${event.detail.value}`;
+        eventLog.textContent += `\n${newEntry}`;
+    });
+    
+    // Ejemplo 4: Integración con formularios
+      document.querySelector('#submit-form').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const productName = document.querySelector('#product-name').value;
+        const quantity = document.querySelector('#form-quantity').dataset.value;
+        const color = document.querySelector('#product-color').value;
+        
+        const resultElement = document.querySelector('#form-result');
+        resultElement.style.display = 'block';
+        resultElement.innerHTML = `
+          <strong>Producto añadido:</strong><br>
+          Nombre: ${productName}<br>
+          Cantidad: ${quantity}<br>
+          Color: ${color}
+        `;
+    });
+  });
+</script>
+</body>
+</html>

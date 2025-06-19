@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="tooltip-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Tooltip Component</h1>
+      <p>Componente web personalizado para crear tooltips interactivos con posicionamiento inteligente, múltiples modos de activación y capacidad para mostrar diferentes tipos de contenido.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Intuitivo</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Adaptable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Tooltip básico con activación por hover -->
+        <div class="example">
+          <h3 class="example-title">Tooltip básico con activación por hover</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <tooltip-component data-mode="hover">
+                  <button class="info-button" data-tooltip-trigger>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                  </button>
+                  
+                  <div class="custom-tooltip" data-tooltip-content>
+                    <div class="tooltip-header">
+                      Información importante
+                    </div>
+                    <div class="tooltip-body">
+                      <p>Este tooltip muestra información adicional al pasar el cursor sobre el botón.</p>
+                    </div>
+                  </div>
+                </tooltip-component>
+                
+                <p style="margin-top: 1rem;">
+                  Pasa el cursor sobre el botón de información para ver el tooltip. Este es el modo más común de uso.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="tooltip-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="tooltip-component/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;tooltip-component data-mode="hover"&gt;
+  &lt;button class="info-button" data-tooltip-trigger&gt;
+    &lt;svg&gt;...&lt;/svg&gt; &lt;!-- Icono de información --&gt;
+  &lt;/button&gt;
+  
+  &lt;div class="custom-tooltip" data-tooltip-content&gt;
+    &lt;div class="tooltip-header"&gt;
+      Información importante
+    &lt;/div&gt;
+    &lt;div class="tooltip-body"&gt;
+      &lt;p&gt;Este tooltip muestra información adicional...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tooltip-component&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.info-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #3f51b5;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.info-button:hover {
+  background-color: #303f9f;
+}
+
+.custom-tooltip {
+  width: 250px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.tooltip-header {
+  background-color: #3f51b5;
+  color: white;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+
+.tooltip-body {
+  padding: 12px;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Tooltip con activación por clic -->
+        <div class="example">
+          <h3 class="example-title">Tooltip con activación por clic</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <tooltip-component data-mode="click">
+                  <button class="help-button" data-tooltip-trigger>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Ayuda
+                  </button>
+                  
+                  <div class="help-tooltip" data-tooltip-content>
+                    <div class="tooltip-header">
+                      Instrucciones
+                    </div>
+                    <div class="tooltip-body">
+                      <p>Siga estos pasos para completar el proceso:</p>
+                      <ol>
+                        <li>Complete el formulario</li>
+                        <li>Verifique sus datos</li>
+                        <li>Envíe la solicitud</li>
+                      </ol>
+                    </div>
+                  </div>
+                </tooltip-component>
+                
+                <p style="margin-top: 1rem;">
+                  Haz clic en el botón para mostrar el tooltip. El tooltip permanecerá visible hasta que hagas clic fuera de él.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;tooltip-component data-mode="click"&gt;
+  &lt;button class="help-button" data-tooltip-trigger&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Ayuda
+  &lt;/button&gt;
+  
+  &lt;div class="help-tooltip" data-tooltip-content&gt;
+    &lt;div class="tooltip-header"&gt;
+      Instrucciones
+    &lt;/div&gt;
+    &lt;div class="tooltip-body"&gt;
+      &lt;p&gt;Siga estos pasos para completar el proceso:&lt;/p&gt;
+      &lt;ol&gt;
+        &lt;li&gt;Complete el formulario&lt;/li&gt;
+        &lt;li&gt;Verifique sus datos&lt;/li&gt;
+        &lt;li&gt;Envíe la solicitud&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tooltip-component&gt;</code></pre>
+
+                <h4>Atributos</h4>
+                <pre><code class="language-markup">&lt;!-- El atributo data-mode="click" hace que el tooltip
+     se active al hacer clic en lugar de al pasar el cursor --&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Tooltip en texto con glosario -->
+        <div class="example">
+          <h3 class="example-title">Tooltip en texto con glosario</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <p>
+                  Los 
+                  <tooltip-component data-mode="hover">
+                    <span class="glossary-term" data-tooltip-trigger>componentes web</span>
+                    <div class="glossary-tooltip" data-tooltip-content>
+                      <h4>Componentes Web</h4>
+                      <p>Conjunto de tecnologías web que permiten crear elementos HTML personalizados y reutilizables con funcionalidad encapsulada que se puede utilizar en aplicaciones web.</p>
+                      <a href="https://developer.mozilla.org/es/docs/Web/Web_Components" target="_blank">Más información</a>
+                    </div>
+                  </tooltip-component>
+                  son una excelente manera de crear interfaces 
+                  <tooltip-component data-mode="hover">
+                    <span class="glossary-term" data-tooltip-trigger>modulares</span>
+                    <div class="glossary-tooltip" data-tooltip-content>
+                      <h4>Modularidad</h4>
+                      <p>Enfoque de diseño que divide un sistema en partes más pequeñas (módulos) que pueden ser desarrolladas, probadas y mantenidas de forma independiente.</p>
+                    </div>
+                  </tooltip-component>
+                  y reutilizables.
+                </p>
+                
+                <p style="margin-top: 1rem;">
+                  Pasa el cursor sobre los términos subrayados para ver su definición. Este patrón es útil para glosarios o explicaciones de términos técnicos.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;p&gt;
+  Los 
+  &lt;tooltip-component data-mode="hover"&gt;
+    &lt;span class="glossary-term" data-tooltip-trigger&gt;
+      componentes web
+    &lt;/span&gt;
+    &lt;div class="glossary-tooltip" data-tooltip-content&gt;
+      &lt;h4&gt;Componentes Web&lt;/h4&gt;
+      &lt;p&gt;Conjunto de tecnologías web que permiten...&lt;/p&gt;
+      &lt;a href="#" target="_blank"&gt;Más información&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/tooltip-component&gt;
+  son una excelente manera de crear interfaces...
+&lt;/p&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.glossary-term {
+  border-bottom: 1px dashed #3f51b5;
+  color: #3f51b5;
+  cursor: help;
+}
+
+.glossary-tooltip {
+  width: 280px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+}
+
+.glossary-tooltip h4 {
+  margin-top: 0;
+  color: #3f51b5;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.glossary-tooltip a {
+  color: #3f51b5;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.9em;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 4: Tooltip con posicionamiento personalizado -->
+        <div class="example">
+          <h3 class="example-title">Tooltip con posicionamiento personalizado</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <div class="position-demo">
+                  <tooltip-component data-mode="hover" data-content-positions="right-middle,bottom-middle,top-middle">
+                    <button class="position-button" data-tooltip-trigger>
+                      Posición derecha
+                    </button>
+                    
+                    <div class="position-tooltip" data-tooltip-content>
+                      <p>Este tooltip aparece a la derecha del botón por defecto, pero cambiará su posición si no hay suficiente espacio.</p>
+                    </div>
+                  </tooltip-component>
+                  
+                  <tooltip-component data-mode="hover" data-content-positions="bottom-middle,top-middle,right-middle">
+                    <button class="position-button" data-tooltip-trigger>
+                      Posición abajo
+                    </button>
+                    
+                    <div class="position-tooltip" data-tooltip-content>
+                      <p>Este tooltip aparece debajo del botón por defecto, pero cambiará su posición si no hay suficiente espacio.</p>
+                    </div>
+                  </tooltip-component>
+                  
+                  <tooltip-component data-mode="hover" data-content-positions="top-middle,bottom-middle,left-middle">
+                    <button class="position-button" data-tooltip-trigger>
+                      Posición arriba
+                    </button>
+                    
+                    <div class="position-tooltip" data-tooltip-content>
+                      <p>Este tooltip aparece encima del botón por defecto, pero cambiará su posición si no hay suficiente espacio.</p>
+                    </div>
+                  </tooltip-component>
+                </div>
+                
+                <p style="margin-top: 1rem;">
+                  Pasa el cursor sobre los botones para ver cómo los tooltips aparecen en diferentes posiciones según la configuración.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;tooltip-component 
+  data-mode="hover" 
+  data-content-positions="right-middle,bottom-middle,top-middle"&gt;
+  &lt;button class="position-button" data-tooltip-trigger&gt;
+    Posición derecha
+  &lt;/button&gt;
+  
+  &lt;div class="position-tooltip" data-tooltip-content&gt;
+    &lt;p&gt;Este tooltip aparece a la derecha del botón...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/tooltip-component&gt;</code></pre>
+
+                <h4>Atributos de posicionamiento</h4>
+                <pre><code class="language-markup">&lt;!-- Posiciones disponibles:
+  top-left, top-middle, top-right,
+  right-top, right-middle, right-bottom,
+  bottom-right, bottom-middle, bottom-left,
+  left-bottom, left-middle, left-top
+--&gt;
+
+&lt;!-- El componente intentará usar las posiciones en el
+     orden especificado hasta encontrar una donde el
+     tooltip sea completamente visible --&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/tooltip-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  <script src="index.js"></script>
+</body>
+</html>

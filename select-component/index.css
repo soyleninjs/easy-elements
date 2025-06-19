@@ -1,0 +1,66 @@
+.select-component {
+  /* select */
+  --select-padding: 5px;
+  --select-background-color: #fff;
+  --select-border: 1px solid #000;
+  --select-border-radius: 4px;
+  /* dropdown */
+  --select-dropdown-offset: 4px;
+  --select-dropdown-background-color: #fff;
+  --select-dropdown-border: 1px solid rgba(0, 0, 0, 0.8);
+  --select-dropdown-border-radius: 4px;
+  --select-dropdown-arrow-size: 20px;
+  --select-dropdown-option-selected-background-color: #ccc;
+  position: relative;
+  box-sizing: border-box;
+
+  & * {
+    box-sizing: border-box;
+  }
+}
+
+.select-component-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--select-border);
+  border-radius: var(--select-border-radius);
+  padding: var(--select-padding);
+  background-color: var(--select-background-color);
+  list-style: none;
+  cursor: pointer;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  & svg {
+    width: var(--select-dropdown-arrow-size);
+    height: auto;
+  }
+}
+
+.select-component-dropdown {
+  position: absolute;
+  top: calc(100% + var(--select-dropdown-offset));
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: var(--select-dropdown-background-color);
+  border-radius: var(--select-dropdown-border-radius);
+  border: var(--select-dropdown-border);
+  overflow: hidden;
+}
+
+.select-component-dropdown-option {
+  padding: 5px 10px;
+  cursor: pointer;
+
+  &:hover,
+  &.selected {
+    background-color: var(--select-dropdown-option-selected-background-color);
+  }
+}

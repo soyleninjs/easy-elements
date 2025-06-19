@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show More Content - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <style>
+    /* Estilos específicos para los ejemplos */
+    .product-features [data-collapsable] {
+      --max-height: 150px;
+    }
+    
+    .product-features button[data-toggle-button] {
+      color: #0066cc;
+      font-weight: bold;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    
+    .user-reviews [data-collapsable] {
+      --max-height: 200px;
+    }
+    
+    .user-reviews [data-collapsable].collapsed {
+      mask-image: linear-gradient(to top, transparent, rgb(0,0,0) 80%);
+    }
+    
+    .user-reviews button[data-toggle-button] {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .long-text [data-collapsable] {
+      --max-height: 100px;
+    }
+
+    .long-text button[data-toggle-button] {
+      display: inline-block;
+      margin-top: 8px;
+      color: #2196F3;
+      background: none;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .styled-content [data-collapsable] {
+      --max-height: 100px;
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .styled-content [data-collapsable].collapsed {
+      mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.8) 70%, rgb(0, 0, 0) 100%);
+    }
+
+    .styled-content button[data-toggle-button] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .styled-content button[data-toggle-button]:hover {
+      background-color: #388E3C;
+    }
+  </style>
+</head>
+<body class="show-more-content-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Show More Content</h1>
+      <p>Componente web personalizado para mostrar contenido colapsable con funcionalidad "mostrar más" / "mostrar menos", ideal para textos largos, descripciones de productos o cualquier contenido que requiera ser expandible.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          <span>Contenido expandible</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Responsive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Texto básico -->
+        <div class="example">
+          <h3 class="example-title">Descripción de producto básica</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <show-more-content class="long-text">
+                  <div data-collapsable>
+                    <h3>Descripción del producto</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in est at nulla scelerisque scelerisque. Vivamus feugiat metus eu orci tincidunt, non fringilla quam sagittis. Quisque feugiat diam nec diam faucibus imperdiet. Sed vestibulum orci vel ligula tincidunt, a bibendum erat posuere. Sed in lacus vel justo consectetur lacinia. Nulla facilisi. Phasellus ac sapien vel massa pulvinar tempus.</p>
+                    <p>Proin consequat turpis vel nisl congue, vel dignissim est volutpat. Mauris vel nisi at justo fermentum bibendum. Fusce non arcu at justo malesuada fermentum. Curabitur ultrices ante vel ex tincidunt, a efficitur lectus ultrices. Mauris euismod sapien vel enim malesuada, non fringilla mi tempus.</p>
+                  </div>
+                  <button type="button" hidden data-toggle-button 
+                          data-label-not-collapsed='Leer menos' 
+                          data-label-collapsed='Leer más'>Leer más</button>
+                </show-more-content>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="show-more-content/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="show-more-content/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;show-more-content&gt;
+  &lt;div data-collapsable&gt;
+    &lt;h3&gt;Descripción del producto&lt;/h3&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&lt;/p&gt;
+    &lt;p&gt;Proin consequat turpis vel nisl congue, vel dignissim...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button type="button" hidden data-toggle-button 
+          data-label-not-collapsed='Leer menos' 
+          data-label-collapsed='Leer más'&gt;Leer más&lt;/button&gt;
+&lt;/show-more-content&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">/* Estilo personalizado */
+.long-text [data-collapsable] {
+  --max-height: 100px;
+}
+
+.long-text button[data-toggle-button] {
+  color: #2196F3;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Lista de características -->
+        <div class="example">
+          <h3 class="example-title">Lista de características con altura personalizada</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <show-more-content class="product-features">
+                  <div data-collapsable>
+                    <h3>Características</h3>
+                    <ul>
+                      <li><strong>Material:</strong> Aluminio de alta resistencia</li>
+                      <li><strong>Dimensiones:</strong> 15 x 20 x 5 cm</li>
+                      <li><strong>Peso:</strong> 350g</li>
+                      <li><strong>Batería:</strong> 5000mAh, hasta 10 horas de uso</li>
+                      <li><strong>Conectividad:</strong> Bluetooth 5.0, WiFi 6</li>
+                      <li><strong>Memoria:</strong> 8GB RAM, 128GB almacenamiento</li>
+                      <li><strong>Pantalla:</strong> 6.5" OLED, 120Hz</li>
+                      <li><strong>Resistencia:</strong> IP68 (agua y polvo)</li>
+                      <li><strong>Sistema operativo:</strong> Android 13</li>
+                      <li><strong>Cámara:</strong> 48MP principal, 12MP ultra gran angular</li>
+                      <li><strong>Carga:</strong> USB-C, carga rápida 65W</li>
+                    </ul>
+                  </div>
+                  <button type="button" hidden data-toggle-button 
+                          data-label-not-collapsed='Ver menos características' 
+                          data-label-collapsed='Ver todas las características'>Ver todas las características</button>
+                </show-more-content>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;show-more-content class="product-features"&gt;
+  &lt;div data-collapsable&gt;
+    &lt;h3&gt;Características&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Material:&lt;/strong&gt; Aluminio de alta resistencia&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Dimensiones:&lt;/strong&gt; 15 x 20 x 5 cm&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Peso:&lt;/strong&gt; 350g&lt;/li&gt;
+      &lt;!-- Más características... --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;button type="button" hidden data-toggle-button 
+          data-label-not-collapsed='Ver menos características' 
+          data-label-collapsed='Ver todas las características'&gt;
+    Ver todas las características
+  &lt;/button&gt;
+&lt;/show-more-content&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.product-features [data-collapsable] {
+  --max-height: 150px;
+}
+
+.product-features button[data-toggle-button] {
+  color: #0066cc;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Reseñas de usuarios -->
+        <div class="example">
+          <h3 class="example-title">Reseñas de usuarios con expansión inicial</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <show-more-content class="user-reviews" data-initial-expanded>
+                  <div data-collapsable>
+                    <h3>Opiniones de clientes</h3>
+                    <div class="review">
+                      <div class="stars" style="color: #ffb74d;">★★★★★</div>
+                      <h4>Excelente producto</h4>
+                      <p>Lo compré hace un mes y funciona perfectamente. La batería dura todo el día incluso con uso intensivo. Recomendado.</p>
+                    </div>
+                    <div class="review">
+                      <div class="stars" style="color: #ffb74d;">★★★★☆</div>
+                      <h4>Muy buena relación calidad-precio</h4>
+                      <p>El producto cumple con lo prometido. Me gusta el diseño y la calidad de construcción. Lo único que mejoraría es el tiempo de carga.</p>
+                    </div>
+                    <div class="review">
+                      <div class="stars" style="color: #ffb74d;">★★★★★</div>
+                      <h4>Increíble</h4>
+                      <p>Superó mis expectativas. Funciona a la perfección y la entrega fue muy rápida.</p>
+                    </div>
+                    <div class="review">
+                      <div class="stars" style="color: #ffb74d;">★★★☆☆</div>
+                      <h4>Buen producto, pero mejorable</h4>
+                      <p>Funciona bien, pero esperaba un poco más de rendimiento. El servicio al cliente fue excelente cuando tuve algunas dudas sobre su uso.</p>
+                    </div>
+                  </div>
+                  <button type="button" hidden data-toggle-button 
+                          data-label-not-collapsed='Mostrar menos opiniones' 
+                          data-label-collapsed='Mostrar todas las opiniones'>Mostrar todas las opiniones</button>
+                </show-more-content>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;show-more-content class="user-reviews" data-initial-expanded&gt;
+  &lt;div data-collapsable&gt;
+    &lt;h3&gt;Opiniones de clientes&lt;/h3&gt;
+    &lt;div class="review"&gt;
+      &lt;div class="stars"&gt;★★★★★&lt;/div&gt;
+      &lt;h4&gt;Excelente producto&lt;/h4&gt;
+      &lt;p&gt;Lo compré hace un mes y funciona perfectamente...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Más reseñas... --&gt;
+  &lt;/div&gt;
+  &lt;button type="button" hidden data-toggle-button 
+          data-label-not-collapsed='Mostrar menos opiniones' 
+          data-label-collapsed='Mostrar todas las opiniones'&gt;
+    Mostrar todas las opiniones
+  &lt;/button&gt;
+&lt;/show-more-content&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.user-reviews [data-collapsable] {
+  --max-height: 200px;
+}
+
+.user-reviews [data-collapsable].collapsed {
+  mask-image: linear-gradient(to top, transparent, rgb(0,0,0) 80%);
+}
+
+.user-reviews button[data-toggle-button] {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 4: Contenido con estilos avanzados -->
+        <div class="example">
+          <h3 class="example-title">Contenido con estilos avanzados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <show-more-content class="styled-content">
+                  <div data-collapsable>
+                    <h3>Términos y condiciones</h3>
+                    <p>Al utilizar este componente, aceptas los siguientes términos y condiciones:</p>
+                    <ol>
+                      <li>El componente se proporciona "tal cual", sin garantías de ningún tipo.</li>
+                      <li>No se permite la redistribución del código sin la debida atribución al autor original.</li>
+                      <li>Las modificaciones están permitidas siempre que se mantenga la atribución original.</li>
+                      <li>El autor no será responsable por ningún daño derivado del uso de este componente.</li>
+                      <li>Este componente puede ser utilizado en proyectos personales y comerciales.</li>
+                      <li>El soporte técnico se proporciona a discreción del autor.</li>
+                      <li>Las actualizaciones se publicarán periódicamente en el repositorio oficial.</li>
+                    </ol>
+                  </div>
+                  <button type="button" hidden data-toggle-button 
+                          data-label-not-collapsed='Ocultar términos completos' 
+                          data-label-collapsed='Leer términos completos'>Leer términos completos</button>
+                </show-more-content>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;show-more-content class="styled-content"&gt;
+  &lt;div data-collapsable&gt;
+    &lt;h3&gt;Términos y condiciones&lt;/h3&gt;
+    &lt;p&gt;Al utilizar este componente, aceptas los siguientes términos...&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;El componente se proporciona "tal cual", sin garantías...&lt;/li&gt;
+      &lt;!-- Más términos... --&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+  &lt;button type="button" hidden data-toggle-button 
+          data-label-not-collapsed='Ocultar términos completos' 
+          data-label-collapsed='Leer términos completos'&gt;
+    Leer términos completos
+  &lt;/button&gt;
+&lt;/show-more-content&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.styled-content [data-collapsable] {
+  --max-height: 100px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.styled-content [data-collapsable].collapsed {
+  mask-image: linear-gradient(
+    to top, 
+    transparent 0%, 
+    rgba(0, 0, 0, 0.8) 70%, 
+    rgb(0, 0, 0) 100%
+  );
+}
+
+.styled-content button[data-toggle-button] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.styled-content button[data-toggle-button]:hover {
+  background-color: #388E3C;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/show-more-content" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  
+  <script src="index.js"></script>
+</body>
+</html>

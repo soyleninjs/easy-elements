@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="sidebar-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Sidebar Component</h1>
+      <p>Barras laterales deslizantes con animaciones fluidas, que pueden abrirse desde cualquier lado de la pantalla. Perfectas para menús de navegación, carritos de compra o paneles informativos.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          <span>Animaciones suaves</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+          </svg>
+          <span>Fácil de usar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+  <!-- Ejemplo 1: Sidebar desde la izquierda -->
+        <div class="example">
+          <h3 class="example-title">Sidebar desde la izquierda (menú de navegación)</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+    <sidebar-component id="sidebar-menu" data-align="left">
+      <details class="sidebar-component" data-sidebar-details>
+        <summary class="sidebar-component-trigger" data-sidebar-trigger>
+          <button class="menu-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </summary>
+  
+        <aside class="sidebar-component-aside">
+          <div class="sidebar-component-mask" data-sidebar-mask></div>
+          
+          <div class="sidebar-component-content">
+            <div class="sidebar-component-header">
+              Navegación
+              <div class="sidebar-component-icon-close-wrapper" data-sidebar-button-close>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.97169 8L0.212755 1.24107C-0.0709183 0.957394 -0.0709183 0.496428 0.212755 0.212755C0.496428 -0.0709184 0.957394 -0.0709184 1.24107 0.212755L8 6.97169L14.7589 0.212755C15.0426 -0.0709184 15.5036 -0.0709184 15.7872 0.212755C16.0709 0.496428 16.0709 0.957394 15.7872 1.24107L9.02831 8L15.7872 14.7589C16.0709 15.0426 16.0709 15.5036 15.7872 15.7872C15.5036 16.0709 15.0426 16.0709 14.7589 15.7872L8 9.02831L1.24107 15.7872C0.957394 16.0709 0.496428 16.0709 0.212755 15.7872C-0.0709183 15.5036 -0.0709183 15.0426 0.212755 14.7589L6.97169 8Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+  
+            <div class="sidebar-component-body">
+              <nav>
+                <ul>
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Productos</a></li>
+                  <li><a href="#">Servicios</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Acerca de</a></li>
+                  <li><a href="#">Contacto</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </aside>
+      </details>
+    </sidebar-component>
+    
+    <div class="example-controls">
+      <button id="open-menu" class="button-action-primary">Abrir menú mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="sidebar-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="sidebar-component/index.css"&gt;
+
+&lt;!-- Implementación del sidebar izquierdo --&gt;
+&lt;sidebar-component data-align="left"&gt;
+  &lt;details class="sidebar-component" data-sidebar-details&gt;
+    &lt;summary class="sidebar-component-trigger" data-sidebar-trigger&gt;
+      &lt;button&gt;Abrir menú&lt;/button&gt;
+    &lt;/summary&gt;
+
+    &lt;aside class="sidebar-component-aside"&gt;
+      &lt;div class="sidebar-component-mask" data-sidebar-mask&gt;&lt;/div&gt;
+      
+      &lt;div class="sidebar-component-content"&gt;
+        &lt;div class="sidebar-component-header"&gt;
+          Navegación
+          &lt;div data-sidebar-button-close&gt;
+            &lt;!-- Icono de cierre --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="sidebar-component-body"&gt;
+          &lt;!-- Contenido del sidebar --&gt;
+          &lt;nav&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Productos&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/details&gt;
+&lt;/sidebar-component&gt;</code></pre>
+
+                <h4>JavaScript</h4>
+                <pre><code class="language-javascript">// Abrir sidebar mediante JavaScript
+document.querySelector('sidebar-component')
+  .querySelector('[data-sidebar-details]')
+  .setAttribute('open', '');</code></pre>
+              </div>
+            </div>
+    </div>
+  </div>
+  
+  <!-- Ejemplo 2: Sidebar desde la derecha -->
+        <div class="example">
+          <h3 class="example-title">Sidebar desde la derecha (carrito de compras)</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+    <sidebar-component id="sidebar-cart" data-align="right">
+      <details class="sidebar-component" data-sidebar-details>
+        <summary class="sidebar-component-trigger" data-sidebar-trigger>
+          <div class="cart-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+                        <span class="cart-count">3</span>
+          </div>
+        </summary>
+  
+        <aside class="sidebar-component-aside">
+          <div class="sidebar-component-mask" data-sidebar-mask></div>
+          
+          <div class="sidebar-component-content">
+            <div class="sidebar-component-header">
+              Carrito de compras
+              <div class="sidebar-component-icon-close-wrapper" data-sidebar-button-close>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.97169 8L0.212755 1.24107C-0.0709183 0.957394 -0.0709183 0.496428 0.212755 0.212755C0.496428 -0.0709184 0.957394 -0.0709184 1.24107 0.212755L8 6.97169L14.7589 0.212755C15.0426 -0.0709184 15.5036 -0.0709184 15.7872 0.212755C16.0709 0.496428 16.0709 0.957394 15.7872 1.24107L9.02831 8L15.7872 14.7589C16.0709 15.0426 16.0709 15.5036 15.7872 15.7872C15.5036 16.0709 15.0426 16.0709 14.7589 15.7872L8 9.02831L1.24107 15.7872C0.957394 16.0709 0.496428 16.0709 0.212755 15.7872C-0.0709183 15.5036 -0.0709183 15.0426 0.212755 14.7589L6.97169 8Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+  
+            <div class="sidebar-component-body">
+              <div class="cart-items">
+                <div class="cart-item">
+                              <img src="https://picsum.photos/id/237/60/60" alt="Producto 1">
+                  <div class="cart-item-details">
+                                <h3>Camisa Oxford</h3>
+                                <p>$29.99</p>
+                    <div class="cart-item-quantity">
+                      <button class="button-action-primary">-</button>
+                      <span>1</span>
+                      <button class="button-action-primary">+</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="cart-item">
+                              <img src="https://picsum.photos/id/26/60/60" alt="Producto 2">
+                  <div class="cart-item-details">
+                                <h3>Pantalón Chino</h3>
+                                <p>$39.99</p>
+                    <div class="cart-item-quantity">
+                      <button class="button-action-primary">-</button>
+                      <span>2</span>
+                      <button class="button-action-primary">+</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="sidebar-component-footer">
+              <div class="cart-total">
+                <span>Total:</span>
+                            <span>$109.97</span>
+              </div>
+              <button class="checkout-button">Proceder al pago</button>
+            </div>
+          </div>
+        </aside>
+      </details>
+    </sidebar-component>
+    
+    <div class="example-controls">
+      <button id="open-cart" class="button-action-primary">Abrir carrito mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Sidebar desde la derecha (carrito) --&gt;
+&lt;sidebar-component data-align="right"&gt;
+  &lt;details class="sidebar-component" data-sidebar-details&gt;
+    &lt;summary class="sidebar-component-trigger" data-sidebar-trigger&gt;
+      &lt;div class="cart-icon"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+        &lt;span class="cart-count"&gt;3&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+
+    &lt;aside class="sidebar-component-aside"&gt;
+      &lt;div class="sidebar-component-mask" data-sidebar-mask&gt;&lt;/div&gt;
+      
+      &lt;div class="sidebar-component-content"&gt;
+        &lt;div class="sidebar-component-header"&gt;
+          Carrito de compras
+          &lt;div data-sidebar-button-close&gt;...&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="sidebar-component-body"&gt;
+          &lt;div class="cart-items"&gt;
+            &lt;!-- Productos del carrito --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar-component-footer"&gt;
+          &lt;div class="cart-total"&gt;
+            &lt;span&gt;Total:&lt;/span&gt;
+            &lt;span&gt;$109.97&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;button&gt;Proceder al pago&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/details&gt;
+&lt;/sidebar-component&gt;</code></pre>
+              </div>
+            </div>
+    </div>
+  </div>
+  
+  <!-- Ejemplo 3: Sidebar desde abajo -->
+        <div class="example">
+          <h3 class="example-title">Sidebar desde abajo (información rápida)</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <sidebar-component id="sidebar-info" data-align="bottom">
+      <details class="sidebar-component" data-sidebar-details>
+        <summary class="sidebar-component-trigger" data-sidebar-trigger>
+                      <button class="info-button">Mostrar información</button>
+        </summary>
+  
+        <aside class="sidebar-component-aside">
+          <div class="sidebar-component-mask" data-sidebar-mask></div>
+          
+          <div class="sidebar-component-content">
+            <div class="sidebar-component-header">
+              Información del producto
+              <div class="sidebar-component-icon-close-wrapper" data-sidebar-button-close>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.97169 8L0.212755 1.24107C-0.0709183 0.957394 -0.0709183 0.496428 0.212755 0.212755C0.496428 -0.0709184 0.957394 -0.0709184 1.24107 0.212755L8 6.97169L14.7589 0.212755C15.0426 -0.0709184 15.5036 -0.0709184 15.7872 0.212755C16.0709 0.496428 16.0709 0.957394 15.7872 1.24107L9.02831 8L15.7872 14.7589C16.0709 15.0426 16.0709 15.5036 15.7872 15.7872C15.5036 16.0709 15.0426 16.0709 14.7589 15.7872L8 9.02831L1.24107 15.7872C0.957394 16.0709 0.496428 16.0709 0.212755 15.7872C-0.0709183 15.5036 -0.0709183 15.0426 0.212755 14.7589L6.97169 8Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+  
+            <div class="sidebar-component-body">
+              <div class="product-details">
+                            <h3>Características del producto</h3>
+                            <ul>
+                              <li>Diseño moderno y ergonómico</li>
+                              <li>Material de alta calidad</li>
+                              <li>Disponible en varios colores</li>
+                              <li>Garantía de 2 años</li>
+                              <li>Envío gratuito en pedidos superiores a $50</li>
+                </ul>
+                            <p>Este producto ha sido fabricado siguiendo los más altos estándares de calidad y sostenibilidad. Todos nuestros materiales son respetuosos con el medio ambiente y nuestro proceso de fabricación tiene certificación ISO 9001.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </details>
+    </sidebar-component>
+    
+    <div class="example-controls">
+      <button id="open-info" class="button-action-primary">Abrir información mediante JavaScript</button>
+    </div>
+  </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Sidebar desde abajo --&gt;
+&lt;sidebar-component data-align="bottom"&gt;
+  &lt;details class="sidebar-component" data-sidebar-details&gt;
+    &lt;summary class="sidebar-component-trigger" data-sidebar-trigger&gt;
+      &lt;button&gt;Mostrar información&lt;/button&gt;
+    &lt;/summary&gt;
+
+    &lt;aside class="sidebar-component-aside"&gt;
+      &lt;div class="sidebar-component-mask" data-sidebar-mask&gt;&lt;/div&gt;
+      
+      &lt;div class="sidebar-component-content"&gt;
+        &lt;div class="sidebar-component-header"&gt;
+          Información del producto
+          &lt;div data-sidebar-button-close&gt;...&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="sidebar-component-body"&gt;
+          &lt;div class="product-details"&gt;
+            &lt;h3&gt;Características del producto&lt;/h3&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Diseño moderno y ergonómico&lt;/li&gt;
+              &lt;li&gt;Material de alta calidad&lt;/li&gt;
+              &lt;!-- Más características --&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/aside&gt;
+  &lt;/details&gt;
+&lt;/sidebar-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/sidebar-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+</div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<script src="index.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 1: Abrir menú mediante JavaScript
+      document.getElementById('open-menu').addEventListener('click', function() {
+    const sidebarMenu = document.getElementById('sidebar-menu');
+        const details = sidebarMenu.querySelector('[data-sidebar-details]');
+        details.setAttribute('open', '');
+    });
+    
+      // Ejemplo 2: Abrir carrito mediante JavaScript
+      document.getElementById('open-cart').addEventListener('click', function() {
+    const sidebarCart = document.getElementById('sidebar-cart');
+        const details = sidebarCart.querySelector('[data-sidebar-details]');
+        details.setAttribute('open', '');
+    });
+    
+      // Ejemplo 3: Abrir información mediante JavaScript
+      document.getElementById('open-info').addEventListener('click', function() {
+    const sidebarInfo = document.getElementById('sidebar-info');
+        const details = sidebarInfo.querySelector('[data-sidebar-details]');
+        details.setAttribute('open', '');
+    });
+  });
+</script>
+</body>
+</html>

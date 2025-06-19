@@ -1,0 +1,27 @@
+/* stylelint-disable selector-max-attribute */
+show-more-content {
+  & [data-collapsable] {
+    overflow: hidden;
+  }
+
+  & [data-collapsable].collapsed {
+    max-height: var(--max-height);
+  }
+
+  & [data-toggle-button][hidden] {
+    display: none;
+  }
+
+  /* example */
+  & > div {
+    --max-height: 100px;
+
+    &.collapsed {
+      mask-image: linear-gradient(
+          to top,
+          transparent,
+          rgb(0,0,0)
+        )
+    }
+  }
+}

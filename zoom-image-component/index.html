@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Image Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <style>
+    .zoom-component-page {
+      --component-primary: #8e44ad;     /* Morado - Color principal del componente */
+      --component-secondary: #6c3483;   /* Morado oscuro */
+      --component-accent: #9b59b6;      /* Morado claro */
+      --component-light: #f5eef8;       /* Morado muy claro */
+    }
+    
+    /* Estilos específicos para los ejemplos */
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    
+    .product-card {
+      text-align: center;
+    }
+    
+    .product-card h4 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+    
+    .product-card p {
+      margin: 0;
+      color: var(--component-primary);
+      font-weight: bold;
+    }
+    
+    .zoom-label {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      background-color: rgba(142, 68, 173, 0.1);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    /* Estilos personalizados para diferentes ejemplos */
+    .zoom-rounded [data-zoom-image-wrapper] {
+      --image-wrapper-border-radius: 12px;
+      --image-wrapper-border: 2px solid var(--component-primary);
+    }
+    
+    .zoom-square [data-zoom-image-wrapper] {
+      --image-wrapper-max-width: 250px;
+      --image-wrapper-aspect-ratio: 1/1;
+    }
+    
+    .zoom-contain [data-zoom-image-wrapper] {
+      --image-object-fit: contain;
+      --image-wrapper-border: 1px solid #e0e0e0;
+      background-color: white;
+    }
+    
+    .zoom-fancy [data-zoom-image-wrapper] {
+      --image-wrapper-border-radius: 8px;
+      --image-wrapper-border: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .zoom-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    /* Cursor personalizado */
+    .zoom-crosshair [data-zoom-image-wrapper] {
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body class="zoom-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Zoom Image Component</h1>
+      <p>Componente web personalizado que permite aplicar efecto de zoom en imágenes mediante click o hover, con seguimiento del cursor para explorar detalles específicos de la imagen.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <line x1="11" y1="8" x2="11" y2="14"></line>
+            <line x1="8" y1="11" x2="14" y2="11"></line>
+          </svg>
+          <span>Zoom interactivo</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+          <span>Fácil de usar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Zoom básico con click -->
+        <div class="example">
+          <h3 class="example-title">Zoom básico con click</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <zoom-image-component data-zoom-mode="click" data-zoom-level="2">
+                  <div data-zoom-image-wrapper>
+                    <img src="https://picsum.photos/id/1054/800/600" alt="Montañas y naturaleza">
+                  </div>
+                </zoom-image-component>
+                
+                <p style="margin-top: 1rem;">
+                  Haz click en la imagen para activar el zoom. Mueve el cursor para explorar diferentes partes de la imagen. Haz click fuera de la imagen o nuevamente en ella para desactivar el zoom.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="zoom-image-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="zoom-image-component/index.css"&gt;
+
+&lt;!-- Implementación básica con click --&gt;
+&lt;zoom-image-component data-zoom-mode="click" data-zoom-level="2"&gt;
+  &lt;div data-zoom-image-wrapper&gt;
+    &lt;img src="ruta/a/imagen.jpg" alt="Descripción de la imagen"&gt;
+  &lt;/div&gt;
+&lt;/zoom-image-component&gt;</code></pre>
+
+                <h4>Atributos importantes</h4>
+                <pre><code class="language-markup">&lt;!-- data-zoom-mode: Establece cómo se activa el zoom (click/hover) --&gt;
+&lt;!-- data-zoom-level: Nivel de ampliación al hacer zoom (2 = 200%) --&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Zoom con hover -->
+        <div class="example">
+          <h3 class="example-title">Zoom con hover</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <zoom-image-component data-zoom-mode="hover" data-zoom-level="1.5" class="zoom-fancy">
+                  <div data-zoom-image-wrapper>
+                    <img src="https://picsum.photos/id/96/800/600" alt="Detalle de producto">
+                  </div>
+                </zoom-image-component>
+                
+                <p style="margin-top: 1rem;">
+                  Simplemente coloca el cursor sobre la imagen para activar el zoom. El zoom se desactivará automáticamente al mover el cursor fuera de la imagen.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;zoom-image-component 
+  data-zoom-mode="hover" 
+  data-zoom-level="1.5" 
+  class="zoom-fancy"&gt;
+  &lt;div data-zoom-image-wrapper&gt;
+    &lt;img src="ruta/a/imagen.jpg" alt="Descripción de la imagen"&gt;
+  &lt;/div&gt;
+&lt;/zoom-image-component&gt;</code></pre>
+
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">.zoom-fancy [data-zoom-image-wrapper] {
+  --image-wrapper-border-radius: 8px;
+  --image-wrapper-border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Galería de productos con zoom -->
+        <div class="example">
+          <h3 class="example-title">Galería de productos con zoom</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <div class="product-gallery">
+                  <div class="product-card">
+                    <zoom-image-component data-zoom-mode="click" data-zoom-level="2.5" class="zoom-square">
+                      <div data-zoom-image-wrapper>
+                        <img src="https://picsum.photos/id/0/600/600" alt="Laptop">
+                      </div>
+                    </zoom-image-component>
+                    <h4>Laptop Pro</h4>
+                    <p>$1,299.99</p>
+                  </div>
+                  
+                  <div class="product-card">
+                    <zoom-image-component data-zoom-mode="click" data-zoom-level="2.5" class="zoom-square zoom-crosshair">
+                      <div data-zoom-image-wrapper>
+                        <img src="https://picsum.photos/id/3/600/600" alt="Smartphone">
+                      </div>
+                    </zoom-image-component>
+                    <h4>Smartphone Z</h4>
+                    <p>$899.99</p>
+                  </div>
+                  
+                  <div class="product-card">
+                    <zoom-image-component data-zoom-mode="click" data-zoom-level="2.5" class="zoom-square">
+                      <div data-zoom-image-wrapper>
+                        <img src="https://picsum.photos/id/180/600/600" alt="Auriculares">
+                      </div>
+                    </zoom-image-component>
+                    <h4>Auriculares Pro</h4>
+                    <p>$249.99</p>
+                  </div>
+                </div>
+                
+                <p style="margin-top: 1rem;">
+                  Esta galería muestra cómo implementar el zoom en imágenes de productos, ideal para tiendas online.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Estructura de la galería</h4>
+                <pre><code class="language-markup">&lt;div class="product-gallery"&gt;
+  &lt;div class="product-card"&gt;
+    &lt;zoom-image-component data-zoom-mode="click" data-zoom-level="2.5" class="zoom-square"&gt;
+      &lt;div data-zoom-image-wrapper&gt;
+        &lt;img src="imagen.jpg" alt="Laptop"&gt;
+      &lt;/div&gt;
+    &lt;/zoom-image-component&gt;
+    &lt;h4&gt;Laptop Pro&lt;/h4&gt;
+    &lt;p&gt;$1,299.99&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Más productos... --&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.zoom-square [data-zoom-image-wrapper] {
+  --image-wrapper-max-width: 250px;
+  --image-wrapper-aspect-ratio: 1/1;
+}
+
+/* Cursor personalizado */
+.zoom-crosshair [data-zoom-image-wrapper] {
+  cursor: crosshair;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 4: Opciones de personalización -->
+        <div class="example">
+          <h3 class="example-title">Opciones de personalización</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                  <div>
+                    <h4 style="margin-top: 0; color: var(--component-primary);">Estilo redondeado</h4>
+                    <zoom-image-component data-zoom-mode="click" class="zoom-rounded">
+                      <div data-zoom-image-wrapper>
+                        <img src="https://picsum.photos/id/119/600/400" alt="Faro">
+                      </div>
+                    </zoom-image-component>
+                    <span class="zoom-label">Bordes redondeados con borde morado</span>
+                  </div>
+                  
+                  <div>
+                    <h4 style="margin-top: 0; color: var(--component-primary);">Ajuste contain</h4>
+                    <zoom-image-component data-zoom-mode="click" class="zoom-contain">
+                      <div data-zoom-image-wrapper>
+                        <img src="https://picsum.photos/id/238/600/400" alt="Perro">
+                      </div>
+                    </zoom-image-component>
+                    <span class="zoom-label">object-fit: contain con fondo blanco</span>
+                  </div>
+                </div>
+                
+                <p style="margin-top: 1.5rem;">
+                  Estos ejemplos muestran cómo personalizar la apariencia del componente usando variables CSS y clases personalizadas.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Opciones de personalización</h4>
+                <pre><code class="language-css">/* Estilo redondeado */
+.zoom-rounded [data-zoom-image-wrapper] {
+  --image-wrapper-border-radius: 12px;
+  --image-wrapper-border: 2px solid var(--component-primary);
+}
+
+/* Ajuste contain */
+.zoom-contain [data-zoom-image-wrapper] {
+  --image-object-fit: contain;
+  --image-wrapper-border: 1px solid #e0e0e0;
+  background-color: white;
+}
+
+/* Variables CSS disponibles */
+[data-zoom-image-wrapper] {
+  --image-wrapper-max-width: 300px;
+  --image-wrapper-aspect-ratio: 300/420;
+  --image-wrapper-border-radius: 0;
+  --image-wrapper-border: 1px solid;
+  --image-object-fit: cover;
+}</code></pre>
+
+                <h4>HTML con clases personalizadas</h4>
+                <pre><code class="language-markup">&lt;zoom-image-component data-zoom-mode="click" class="zoom-rounded"&gt;
+  &lt;div data-zoom-image-wrapper&gt;
+    &lt;img src="imagen.jpg" alt="Descripción"&gt;
+  &lt;/div&gt;
+&lt;/zoom-image-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 5: Responsive con desactivación en móviles -->
+        <div class="example">
+          <h3 class="example-title">Responsive con desactivación en móviles</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <zoom-image-component data-zoom-mode="click" data-zoom-level="2" data-disable-below="768">
+  <div data-zoom-image-wrapper>
+                    <img src="https://picsum.photos/id/26/800/600" alt="Imagen de libro">
+                  </div>
+                </zoom-image-component>
+                
+                <p style="margin-top: 1rem;">
+                  Este ejemplo desactiva automáticamente el zoom en pantallas menores a 768px de ancho, mejorando la experiencia en dispositivos móviles. Prueba a reducir el tamaño de tu ventana para ver cómo funciona.
+                </p>
+                
+                <div class="example-controls">
+                  <button id="simulate-desktop" class="button-action-primary">Simular escritorio</button>
+                  <button id="simulate-mobile" class="button-action-primary">Simular móvil</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Implementación responsive</h4>
+                <pre><code class="language-markup">&lt;zoom-image-component 
+  data-zoom-mode="click" 
+  data-zoom-level="2" 
+  data-disable-below="768"&gt;
+  &lt;div data-zoom-image-wrapper&gt;
+    &lt;img src="imagen.jpg" alt="Descripción"&gt;
+  &lt;/div&gt;
+&lt;/zoom-image-component&gt;</code></pre>
+
+                <h4>Cómo funciona</h4>
+                <pre><code class="language-javascript">// El componente comprueba automáticamente el ancho de ventana
+// y añade la clase zoom-disabled si es menor que el valor
+// especificado en data-disable-below
+
+// El atributo data-disable-below establece en qué punto
+// se desactiva la funcionalidad de zoom (en píxeles)
+
+// Cuando el zoom está desactivado, el cursor no cambia
+// y los eventos de click/hover no tienen efecto</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/zoom-image-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  
+  <script src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 5: Simulación de desktop/mobile
+      const responsiveZoom = document.querySelector('[data-disable-below="768"]');
+      
+      document.getElementById('simulate-desktop').addEventListener('click', function() {
+        responsiveZoom.classList.remove('zoom-disabled');
+        alert('Simulando vista de escritorio. El zoom está activado.');
+      });
+      
+      document.getElementById('simulate-mobile').addEventListener('click', function() {
+        responsiveZoom.classList.add('zoom-disabled');
+        alert('Simulando vista móvil. El zoom está desactivado.');
+      });
+    });
+  </script>
+</body>
+</html>

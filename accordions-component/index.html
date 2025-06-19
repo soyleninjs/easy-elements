@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordions Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="accordion-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Accordions Component</h1>
+      <p>Componente web personalizado que permite crear grupos de acordeones con funcionalidad de expansión y colapso, con la opción de mantener solo un acordeón abierto a la vez o permitir múltiples acordeones abiertos simultáneamente.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <span>Expansión/Colapso</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="3" y1="15" x2="21" y2="15"></line>
+          </svg>
+          <span>Agrupación</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Acordeones con apertura única -->
+        <div class="example">
+          <h3 class="example-title">Acordeones con apertura única</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <accordions-component data-open-one-by-one id="basic-accordions">
+                  <details class="accordion" data-accordion open>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">¿Qué es HTML?</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>HTML (HyperText Markup Language) es el lenguaje de marcado estándar para crear páginas web. Describe la estructura de una página web mediante elementos que le indican al navegador cómo mostrar el contenido.</p>
+                      <ul>
+                        <li>Es la base de todas las páginas web</li>
+                        <li>Define la estructura del contenido</li>
+                        <li>Utiliza etiquetas para definir elementos</li>
+                      </ul>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">¿Qué es CSS?</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML. CSS describe cómo deben mostrarse los elementos HTML.</p>
+                      <ul>
+                        <li>Define los estilos visuales</li>
+                        <li>Permite la separación de contenido y diseño</li>
+                        <li>Facilita el diseño responsivo</li>
+                      </ul>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">¿Qué es JavaScript?</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>JavaScript es un lenguaje de programación que permite implementar funcionalidades complejas en páginas web. Cada vez que una página web hace más que simplemente mostrar información estática, es probable que JavaScript esté involucrado.</p>
+                      <ul>
+                        <li>Añade interactividad a las páginas web</li>
+                        <li>Permite la manipulación dinámica del DOM</li>
+                        <li>Facilita la comunicación con servidores</li>
+                      </ul>
+                    </div>
+                  </details>
+                </accordions-component>
+                
+                <div class="example-controls">
+                  <button id="open-first" class="button-action-primary">Abrir primero</button>
+                  <button id="open-second" class="button-action-primary">Abrir segundo</button>
+                  <button id="close-all" class="button-action-primary">Cerrar todos</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="accordions-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="accordions-component/index.css"&gt;
+
+&lt;!-- Implementación básica con apertura única --&gt;
+&lt;accordions-component data-open-one-by-one&gt;
+  &lt;details class="accordion" data-accordion open&gt;
+    &lt;summary class="accordion-trigger" data-accordion-trigger&gt;
+      &lt;span class="accordion-title"&gt;¿Qué es HTML?&lt;/span&gt;
+      &lt;div class="accordion-asset-wrapper"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+
+    &lt;div class="accordion-content" data-accordion-content&gt;
+      &lt;p&gt;HTML (HyperText Markup Language) es...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;details class="accordion" data-accordion&gt;
+    &lt;!-- Más acordeones aquí --&gt;
+  &lt;/details&gt;
+&lt;/accordions-component&gt;</code></pre>
+
+                <h4>Atributos importantes</h4>
+                <pre><code class="language-markup">&lt;!-- data-open-one-by-one: Solo permite abrir un acordeón a la vez --&gt;
+&lt;accordions-component data-open-one-by-one&gt;...&lt;/accordions-component&gt;
+
+&lt;!-- open: Establece que el acordeón esté abierto inicialmente --&gt;
+&lt;details class="accordion" data-accordion open&gt;...&lt;/details&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Acordeones con múltiple apertura -->
+        <div class="example">
+          <h3 class="example-title">Acordeones con múltiple apertura</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <accordions-component id="multi-accordions">
+                  <details class="accordion" data-accordion open>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Sección 1: Introducción</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Esta es la introducción al curso de desarrollo web. Aquí encontrarás información básica sobre los temas que se cubrirán durante todo el programa de estudios.</p>
+                      <p>En esta sección aprenderás los conceptos básicos de desarrollo web y cómo funcionan las tecnologías web modernas. También veremos las herramientas que necesitarás para comenzar tu viaje como desarrollador web.</p>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion open>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Sección 2: Conceptos fundamentales</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>En esta sección se abordan los conceptos fundamentales que debes conocer para el desarrollo web:</p>
+                      <ul>
+                        <li>Estructura y semántica de HTML</li>
+                        <li>Selectores CSS y cascada de estilos</li>
+                        <li>Conceptos básicos de JavaScript</li>
+                        <li>Modelos de caja y diseño responsive</li>
+                      </ul>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Sección 3: Temas avanzados</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Esta sección cubre temas avanzados para usuarios con experiencia previa en desarrollo web:</p>
+                      <ul>
+                        <li>Frameworks y librerías modernas</li>
+                        <li>APIs y comunicación asíncrona</li>
+                        <li>Patrones de diseño avanzados</li>
+                        <li>Optimización y rendimiento</li>
+                      </ul>
+                    </div>
+                  </details>
+                </accordions-component>
+                
+                <p style="margin-top: 1rem;">
+                  En este ejemplo, puedes abrir múltiples acordeones simultáneamente, ya que no se ha especificado el atributo <code>data-open-one-by-one</code>.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Implementación con múltiple apertura --&gt;
+&lt;accordions-component&gt;
+  &lt;details class="accordion" data-accordion open&gt;
+    &lt;summary class="accordion-trigger" data-accordion-trigger&gt;
+      &lt;span class="accordion-title"&gt;Sección 1: Introducción&lt;/span&gt;
+      &lt;div class="accordion-asset-wrapper"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+
+    &lt;div class="accordion-content" data-accordion-content&gt;
+      &lt;p&gt;Esta es la introducción al curso...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+
+  &lt;!-- Más acordeones aquí --&gt;
+&lt;/accordions-component&gt;</code></pre>
+
+                <h4>JavaScript</h4>
+                <pre><code class="language-javascript">// Obtener referencia al componente
+const accordions = document.querySelector('accordions-component');
+
+// Cerrar todos los acordeones
+accordions.closeAllAccordions();
+
+// Abrir un acordeón específico mediante JavaScript
+const secondAccordion = accordions.querySelectorAll('[data-accordion]')[1];
+secondAccordion.open = true;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Acordeones con estilos personalizados -->
+        <div class="example">
+          <h3 class="example-title">Acordeones con estilos personalizados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <h4 style="color: var(--component-primary);">Estilo Moderno</h4>
+                <accordions-component data-open-one-by-one>
+                  <details class="accordion accordion-modern" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Planes y precios</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Ofrecemos diferentes planes adaptados a tus necesidades, desde versiones gratuitas hasta planes empresariales con soporte dedicado.</p>
+                    </div>
+                  </details>
+                </accordions-component>
+                
+                <h4 style="color: var(--component-primary); margin-top: 1.5rem;">Estilo con Bordes</h4>
+                <accordions-component data-open-one-by-one>
+                  <details class="accordion accordion-bordered" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Preguntas frecuentes</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Encuentra respuestas a las preguntas más comunes sobre nuestros productos y servicios.</p>
+                    </div>
+                  </details>
+                </accordions-component>
+                
+                <h4 style="color: var(--component-primary); margin-top: 1.5rem;">Estilo Minimalista</h4>
+                <accordions-component data-open-one-by-one>
+                  <details class="accordion accordion-minimal" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Información de contacto</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Puedes contactarnos a través de nuestro formulario en línea o llamando al número de atención al cliente.</p>
+                    </div>
+                  </details>
+                  
+                  <details class="accordion accordion-minimal" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Ubicación</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Nos encontramos en la ciudad de Barcelona, España. Visita nuestra oficina en horario de 9:00 a 18:00 de lunes a viernes.</p>
+                    </div>
+                  </details>
+                </accordions-component>
+              </div>
+              
+              <div class="example-code">
+                <h4>Estilos CSS</h4>
+                <pre><code class="language-css">/* Estilo Moderno */
+.accordion-modern {
+  --accordion-border: none;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 8px !important;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-modern .accordion-trigger {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background-color: rgba(76, 175, 80, 0.2);
+}
+
+.accordion-modern .accordion-content {
+  padding: 0 20px 20px;
+}
+
+/* Estilo con Bordes */
+.accordion-bordered {
+  --accordion-border: 2px solid #4caf50;
+  border-radius: 4px !important;
+  margin-bottom: 15px;
+}
+
+.accordion-bordered .accordion-trigger {
+  padding: 12px 15px;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Estilo Minimalista */
+.accordion-minimal {
+  --accordion-border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 0 !important;
+}
+
+.accordion-minimal .accordion-trigger {
+  padding: 15px 0;
+}
+
+.accordion-minimal .accordion-content {
+  padding: 0 0 15px;
+}</code></pre>
+
+                <h4>HTML con clases personalizadas</h4>
+                <pre><code class="language-markup">&lt;details class="accordion accordion-modern" data-accordion&gt;
+  &lt;summary class="accordion-trigger" data-accordion-trigger&gt;
+    &lt;span class="accordion-title"&gt;Planes y precios&lt;/span&gt;
+    &lt;div class="accordion-asset-wrapper"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/summary&gt;
+
+  &lt;div class="accordion-content" data-accordion-content&gt;
+    &lt;p&gt;Contenido del acordeón...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 4: Uso con JavaScript -->
+        <div class="example">
+          <h3 class="example-title">Control mediante JavaScript</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <accordions-component data-open-one-by-one id="js-accordions">
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Menú Principal</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Esta sección contiene las opciones principales del menú. Cada opción te llevará a una sección diferente de la aplicación.</p>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Configuración</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Aquí puedes modificar todas las configuraciones de la aplicación, incluyendo ajustes de perfil, notificaciones y preferencias de visualización.</p>
+                    </div>
+                  </details>
+                
+                  <details class="accordion" data-accordion>
+                    <summary class="accordion-trigger" data-accordion-trigger>
+                      <span class="accordion-title">Ayuda</span>
+                      <div class="accordion-asset-wrapper">
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M.165 7.968a.611.611 0 0 0 .016.852c.235.234.613.24.857.015l6.577-6.548 6.348 6.548a.619.619 0 0 0 .857-.015.612.612 0 0 0 .014-.852L7.615.667l-7.45 7.3z" fill="#000"></path>
+                        </svg>
+                      </div>
+                    </summary>
+                
+                    <div class="accordion-content" data-accordion-content>
+                      <p>Sección de ayuda y soporte técnico. Aquí encontrarás tutoriales, guías y la información de contacto con nuestro equipo de soporte.</p>
+                    </div>
+                  </details>
+                </accordions-component>
+                
+                <div class="example-controls">
+                  <button id="open-first-js" class="button-action-primary">Abrir primer acordeón</button>
+                  <button id="open-second-js" class="button-action-primary">Abrir segundo acordeón</button>
+                  <button id="open-third-js" class="button-action-primary">Abrir tercer acordeón</button>
+                  <button id="close-all-js" class="button-action-primary">Cerrar todos</button>
+                </div>
+                
+                <div id="accordion-status" style="margin-top: 1rem; padding: 0.75rem; background-color: rgba(0, 0, 0, 0.2); border-radius: 4px;">
+                  Estado: Ningún acordeón abierto
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Control mediante JavaScript</h4>
+                <pre><code class="language-javascript">// Obtener referencia al componente
+const jsAccordions = document.getElementById('js-accordions');
+const statusElement = document.getElementById('accordion-status');
+
+// Obtener todos los acordeones
+const accordionItems = jsAccordions.querySelectorAll('[data-accordion]');
+
+// Abrir el primer acordeón
+document.getElementById('open-first-js').addEventListener('click', () => {
+  accordionItems[0].open = true;
+  updateStatus();
+});
+
+// Abrir el segundo acordeón
+document.getElementById('open-second-js').addEventListener('click', () => {
+  accordionItems[1].open = true;
+  updateStatus();
+});
+
+// Abrir el tercer acordeón
+document.getElementById('open-third-js').addEventListener('click', () => {
+  accordionItems[2].open = true;
+  updateStatus();
+});
+
+// Cerrar todos los acordeones
+document.getElementById('close-all-js').addEventListener('click', () => {
+  jsAccordions.closeAllAccordions();
+  updateStatus();
+});
+
+// Actualizar el estado mostrado
+function updateStatus() {
+  const openAccordions = [...accordionItems]
+    .filter(item => item.open)
+    .map((item, index) => `Acordeón ${index + 1}`);
+  
+  statusElement.textContent = openAccordions.length 
+    ? `Estado: Abierto(s): ${openAccordions.join(', ')}` 
+    : 'Estado: Ningún acordeón abierto';
+}
+
+// Escuchar cambios en los acordeones
+accordionItems.forEach((item, index) => {
+  item.addEventListener('toggle', () => {
+    updateStatus();
+  });
+});</code></pre>
+
+                <h4>Métodos disponibles</h4>
+                <pre><code class="language-javascript">// Métodos disponibles en el componente accordions-component:
+
+// Cerrar todos los acordeones
+accordionsComponent.closeAllAccordions();
+
+// Manipular acordeones individuales
+const accordionElement = accordionsComponent.querySelector('[data-accordion]');
+accordionElement.open = true;  // Abrir un acordeón
+accordionElement.open = false; // Cerrar un acordeón</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/accordions-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  
+  <script src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 1: Acordeones con apertura única
+      const basicAccordions = document.getElementById('basic-accordions');
+      const basicAccordionItems = basicAccordions.querySelectorAll('[data-accordion]');
+      
+      document.getElementById('open-first').addEventListener('click', function() {
+        basicAccordionItems[0].open = true;
+      });
+      
+      document.getElementById('open-second').addEventListener('click', function() {
+        basicAccordionItems[1].open = true;
+      });
+      
+      document.getElementById('close-all').addEventListener('click', function() {
+        basicAccordions.closeAllAccordions();
+      });
+      
+      // Ejemplo 4: Control mediante JavaScript
+      const jsAccordions = document.getElementById('js-accordions');
+      const statusElement = document.getElementById('accordion-status');
+      const accordionItems = jsAccordions.querySelectorAll('[data-accordion]');
+      
+      document.getElementById('open-first-js').addEventListener('click', function() {
+        accordionItems[0].open = true;
+        updateStatus();
+      });
+      
+      document.getElementById('open-second-js').addEventListener('click', function() {
+        accordionItems[1].open = true;
+        updateStatus();
+      });
+      
+      document.getElementById('open-third-js').addEventListener('click', function() {
+        accordionItems[2].open = true;
+        updateStatus();
+      });
+      
+      document.getElementById('close-all-js').addEventListener('click', function() {
+        jsAccordions.closeAllAccordions();
+        updateStatus();
+      });
+      
+      function updateStatus() {
+        const openAccordions = [...accordionItems]
+          .filter(item => item.open)
+          .map((item, index) => `Acordeón ${index + 1}`);
+        
+        statusElement.textContent = openAccordions.length 
+          ? `Estado: Abierto(s): ${openAccordions.join(', ')}` 
+          : 'Estado: Ningún acordeón abierto';
+      }
+      
+      accordionItems.forEach(function(item) {
+        item.addEventListener('toggle', function() {
+          updateStatus();
+        });
+      });
+      
+      // Inicializar estado
+      updateStatus();
+    });
+  </script>
+</body>
+</html>

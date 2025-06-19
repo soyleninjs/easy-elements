@@ -1,0 +1,361 @@
+/* Estilos para la landing page del Quantity Component */
+:root {
+  --component-primary: #00bcd4;     /* Cian - Color principal del componente */
+  --component-secondary: #0097a7;   /* Cian oscuro */
+  --component-accent: #4dd0e1;      /* Cian claro */
+  --component-light: #e0f7fa;       /* Cian muy claro */
+  
+  --text-color: #e0e0e0;
+  --text-color-secondary: #b0bec5;
+  --dark-bg: #121212;
+  --dark-bg-lighter: #1e1e1e;
+  --dark-bg-card: #252525;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.22);
+  --card-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.component-hero {
+  background: linear-gradient(135deg, var(--component-primary), var(--component-secondary));
+  color: white;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.component-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.component-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.component-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.component-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.component-features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.component-feature {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.component-feature svg {
+  width: 24px;
+  height: 24px;
+  color: var(--component-accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.examples-section {
+  padding: 3rem 0;
+}
+
+.examples-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--component-primary);
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.example {
+  background-color: var(--dark-bg-card);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0;
+}
+
+.example-title {
+  padding: 1rem 1.5rem;
+  background-color: rgba(0, 188, 212, 0.2);
+  border-bottom: 1px solid rgba(0, 188, 212, 0.3);
+  font-weight: bold;
+  color: var(--component-accent);
+  margin-bottom: 0;
+}
+
+.example-content {
+  padding: 1.5rem;
+}
+
+/* Nueva estructura de ejemplo con dos columnas */
+.example-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .example-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.example-demo {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.example-code {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.example-code h4 {
+  margin-top: 0;
+  color: var(--component-accent);
+  margin-bottom: 0.75rem;
+}
+
+.example-code pre {
+  margin: 0 0 1.5rem;
+}
+
+.example-code pre:last-child {
+  margin-bottom: 0;
+}
+
+.code-block {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e0e0e0;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.example-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: var(--component-primary);
+  color: white;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--component-secondary);
+}
+
+.component-docs-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.component-docs-link a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--component-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color var(--transition-speed);
+  font-weight: 500;
+}
+
+.component-docs-link a:hover {
+  background-color: var(--component-secondary);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--dark-bg-lighter);
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  margin: 0;
+  color: var(--text-color-secondary);
+}
+
+footer a {
+  color: var(--component-accent);
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+/* Estilos específicos para quantity-component */
+.quantity-component-page quantity-component {
+  margin: 1rem 0;
+}
+
+/* Estilos para los diferentes temas de quantity-component en los ejemplos */
+.quantity-component-page .quantity-material {
+  --max-width: 120px;
+  --height: 45px;
+  --border: none;
+  --border-radius: 4px;
+  --button-background: #f5f5f5;
+  --button-background-hover: #00bcd4;
+  --button-color-hover: white;
+  --input-background: #f5f5f5;
+  --button-color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.quantity-component-page .quantity-rounded {
+  --max-width: 140px;
+  --height: 45px;
+  --border: 1px solid rgba(0, 188, 212, 0.5);
+  --border-radius: 50px;
+  --button-background: rgba(0, 0, 0, 0.2);
+  --button-background-hover: var(--component-primary);
+  --button-color: var(--text-color);
+  --button-color-hover: white;
+  --input-background: rgba(0, 0, 0, 0.1);
+  --input-text-color: var(--text-color);
+}
+
+.quantity-component-page .quantity-dark {
+  --max-width: 120px;
+  --height: 40px;
+  --border: 1px solid rgba(0, 188, 212, 0.3);
+  --border-radius: 4px;
+  --button-background: #333;
+  --button-color: var(--component-primary);
+  --button-background-hover: var(--component-primary);
+  --button-color-hover: white;
+  --input-background: #333;
+  --input-text-color: var(--text-color);
+}
+
+.quantity-component-page .quantity-primary {
+  --max-width: 130px;
+  --height: 42px;
+  --border: 1px solid var(--component-primary);
+  --border-radius: 5px;
+  --button-background: var(--component-primary);
+  --button-color: white;
+  --button-background-hover: var(--component-secondary);
+  --button-color-hover: white;
+  --input-background: rgba(0, 0, 0, 0.1);
+  --input-text-color: var(--text-color);
+}
+
+.back-to-home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 10;
+  transition: background-color var(--transition-speed);
+}
+
+.back-to-home:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.back-to-home svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .component-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .component-hero p {
+    font-size: 1rem;
+  }
+  
+  .component-features {
+    flex-direction: column;
+    align-items: center;
+  }
+} 

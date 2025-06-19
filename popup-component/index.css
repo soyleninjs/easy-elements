@@ -1,0 +1,136 @@
+/*
+[{(+++)}] Button Open [{(+++)}]
+*/
+
+.popup-component-button-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-component-button {
+  cursor: pointer;
+}
+
+/*
+[{(+++)}] Content [{(+++)}]
+*/
+
+.popup-component {
+  --animation-config: 0.3s forwards ease-in-out;
+  --popup-padding: 30px 20px;
+  --popup-content-max-width: 500px;
+  --popup-content-padding: 10px;
+  --popup-content-border-radius: 0;
+  --button-close-top: 10px;
+  --button-close-right: 10px;
+  --button-close-size-icon: 16px;
+  --button-close-asset-color: #000000;
+  --button-close-asset-color-hover: #000000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999999999999;
+  display: none;
+  width: 100vw;
+  height: 100dvh;
+  padding: var(--popup-padding);
+  overflow: hidden auto;
+  box-sizing: border-box;
+}
+
+.popup-component-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-component-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--popup-content-max-width);
+  background-color: rgb(255, 255, 255);
+  padding: var(--popup-content-padding);
+  border-radius: var(--popup-content-border-radius);
+  margin: auto;
+
+  & iframe,
+  & video {
+    display: flex;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  & img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/*
+[{(+++)}] Button Close [{(+++)}]
+*/
+
+.popup-component-icon-close-wrapper {
+  position: absolute;
+  top: var(--button-close-top);
+  right: var(--button-close-right);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--button-close-asset-color);
+  cursor: pointer;
+  
+  &:hover {
+    color: var(--button-close-asset-color-hover);
+  }
+
+  & svg {
+    width: var(--button-close-size-icon);
+    height: auto;
+  }
+}
+
+/*
+[{(+++)}] configs [{(+++)}]
+*/
+
+.popup-component.visible {
+  display: flex;
+  animation: popup-fadeIn var(--animation-config);
+}
+
+.popup-component.hidding {
+  animation: popup-fadeOut var(--animation-config);
+}
+
+/*
+[{(+++)}] animations [{(+++)}]
+*/
+
+@keyframes popup-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup-fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

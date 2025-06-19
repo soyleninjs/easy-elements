@@ -1,0 +1,568 @@
+/* Estilos específicos para la landing page - Modo Oscuro */
+:root {
+  --primary-color: #2196f3;
+  --primary-color-dark: #0d47a1;
+  --secondary-color: #64b5f6;
+  --accent-color: #00b0ff;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #b0bec5;
+  --dark-bg: #121212;
+  --dark-bg-lighter: #1e1e1e;
+  --dark-bg-card: #252525;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.22);
+  --card-radius: 8px;
+  --transition-speed: 0.3s;
+  
+  /* Colores distintivos para cada componente */
+  --popup-color: #2196f3;      /* Azul */
+  --sidebar-color: #9c27b0;    /* Púrpura */
+  --accordion-color: #4caf50;  /* Verde */
+  --tabs-color: #ff9800;       /* Naranja */
+  --select-color: #e91e63;     /* Rosa */
+  --quantity-color: #00bcd4;   /* Cian */
+  --showmore-color: #ffeb3b;   /* Amarillo */
+  --zoomimage-color: #8e44ad;  /* Morado */
+  --tooltip-color: #3f51b5;    /* Índigo */
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: unset;
+  }
+}
+
+/* Estilos para el botón "back-to-home" - Común para todos los componentes */
+.back-to-home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-home:hover {
+  background-color: rgba(33, 150, 243, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+.back-to-home svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Personalización del botón "back-to-home" para cada componente */
+/* Popup Component */
+.popup-component-page .back-to-home:hover {
+  background-color: rgba(33, 150, 243, 0.5);
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+/* Sidebar Component */
+.sidebar-component-page .back-to-home:hover {
+  background-color: rgba(156, 39, 176, 0.5);
+  box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
+}
+
+/* Accordion Component */
+.accordion-component-page .back-to-home:hover {
+  background-color: rgba(76, 175, 80, 0.5);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Zoom Image Component */
+.zoom-component-page .back-to-home:hover {
+  background-color: rgba(142, 68, 173, 0.5);
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+/* Tabs Component */
+.tabs-component-page .back-to-home:hover {
+  background-color: rgba(255, 152, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Select Component */
+.select-component-page .back-to-home:hover {
+  background-color: rgba(233, 30, 99, 0.5);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+/* Quantity Component */
+.quantity-component-page .back-to-home:hover {
+  background-color: rgba(0, 188, 212, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Show More Component */
+.showmore-component-page .back-to-home:hover {
+  background-color: rgba(255, 235, 59, 0.5);
+  box-shadow: 0 5px 15px rgba(255, 235, 59, 0.3);
+}
+
+/* Tooltip Component */
+.tooltip-component-page .back-to-home:hover {
+  background-color: rgba(63, 81, 181, 0.5);
+  box-shadow: 0 5px 15px rgba(63, 81, 181, 0.3);
+}
+
+.hero {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.component-card {
+  background-color: var(--dark-bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.component-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: height 0.3s ease;
+}
+
+.component-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 10px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.component-card:hover::before {
+  height: 5px;
+}
+
+.card-icon {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-bg-lighter);
+  color: var(--primary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.component-card:hover .card-icon::after {
+  opacity: 1;
+}
+
+.card-icon svg {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.4));
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.2);
+}
+
+.card-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-tag {
+  font-size: 0.85rem;
+  background-color: rgba(33, 150, 243, 0.15);
+  color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.card-arrow {
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+footer {
+  background-color: #0a0a0a;
+  color: var(--text-color-secondary);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Iconos específicos para cada componente */
+.icon-popup svg,
+.icon-sidebar svg,
+.icon-accordion svg,
+.icon-tabs svg,
+.icon-select svg,
+.icon-quantity svg,
+.icon-show-more svg,
+.icon-zoom-image svg,
+.icon-tooltip svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+/* Efecto de brillo al pasar el cursor */
+.component-card:hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(33, 150, 243, 0.6));
+  transform: scale(1.05);
+}
+
+/* Estilos específicos por componente */
+
+/* Popup Component */
+.icon-popup {
+  color: var(--popup-color);
+}
+
+.component-card:has(.icon-popup)::before {
+  background-color: var(--popup-color);
+}
+
+.component-card:has(.icon-popup) .card-content h2 {
+  color: var(--popup-color);
+  text-shadow: 0 0 10px rgba(33, 150, 243, 0.2);
+}
+
+.component-card:has(.icon-popup) .card-tag,
+.component-card:has(.icon-popup) .card-arrow {
+  color: var(--popup-color);
+}
+
+.component-card:has(.icon-popup) .card-tag {
+  background-color: rgba(33, 150, 243, 0.15);
+}
+
+.component-card:has(.icon-popup):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(33, 150, 243, 0.6));
+}
+
+/* Sidebar Component */
+.icon-sidebar {
+  color: var(--sidebar-color);
+}
+
+.component-card:has(.icon-sidebar)::before {
+  background-color: var(--sidebar-color);
+}
+
+.component-card:has(.icon-sidebar) .card-content h2 {
+  color: var(--sidebar-color);
+  text-shadow: 0 0 10px rgba(156, 39, 176, 0.2);
+}
+
+.component-card:has(.icon-sidebar) .card-tag,
+.component-card:has(.icon-sidebar) .card-arrow {
+  color: var(--sidebar-color);
+}
+
+.component-card:has(.icon-sidebar) .card-tag {
+  background-color: rgba(156, 39, 176, 0.15);
+}
+
+.component-card:has(.icon-sidebar):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(156, 39, 176, 0.6));
+}
+
+/* Accordion Component */
+.icon-accordion {
+  color: var(--accordion-color);
+}
+
+.component-card:has(.icon-accordion)::before {
+  background-color: var(--accordion-color);
+}
+
+.component-card:has(.icon-accordion) .card-content h2 {
+  color: var(--accordion-color);
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+}
+
+.component-card:has(.icon-accordion) .card-tag,
+.component-card:has(.icon-accordion) .card-arrow {
+  color: var(--accordion-color);
+}
+
+.component-card:has(.icon-accordion) .card-tag {
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
+.component-card:has(.icon-accordion):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(76, 175, 80, 0.6));
+}
+
+/* Tabs Component */
+.icon-tabs {
+  color: var(--tabs-color);
+}
+
+.component-card:has(.icon-tabs)::before {
+  background-color: var(--tabs-color);
+}
+
+.component-card:has(.icon-tabs) .card-content h2 {
+  color: var(--tabs-color);
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.2);
+}
+
+.component-card:has(.icon-tabs) .card-tag,
+.component-card:has(.icon-tabs) .card-arrow {
+  color: var(--tabs-color);
+}
+
+.component-card:has(.icon-tabs) .card-tag {
+  background-color: rgba(255, 152, 0, 0.15);
+}
+
+.component-card:has(.icon-tabs):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(255, 152, 0, 0.6));
+}
+
+/* Select Component */
+.icon-select {
+  color: var(--select-color);
+}
+
+.component-card:has(.icon-select)::before {
+  background-color: var(--select-color);
+}
+
+.component-card:has(.icon-select) .card-content h2 {
+  color: var(--select-color);
+  text-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+}
+
+.component-card:has(.icon-select) .card-tag,
+.component-card:has(.icon-select) .card-arrow {
+  color: var(--select-color);
+}
+
+.component-card:has(.icon-select) .card-tag {
+  background-color: rgba(233, 30, 99, 0.15);
+}
+
+.component-card:has(.icon-select):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(233, 30, 99, 0.6));
+}
+
+/* Quantity Component */
+.icon-quantity {
+  color: var(--quantity-color);
+}
+
+.component-card:has(.icon-quantity)::before {
+  background-color: var(--quantity-color);
+}
+
+.component-card:has(.icon-quantity) .card-content h2 {
+  color: var(--quantity-color);
+  text-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+}
+
+.component-card:has(.icon-quantity) .card-tag,
+.component-card:has(.icon-quantity) .card-arrow {
+  color: var(--quantity-color);
+}
+
+.component-card:has(.icon-quantity) .card-tag {
+  background-color: rgba(0, 188, 212, 0.15);
+}
+
+.component-card:has(.icon-quantity):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(0, 188, 212, 0.6));
+}
+
+/* Show More Component */
+.icon-show-more {
+  color: var(--showmore-color);
+}
+
+.component-card:has(.icon-show-more)::before {
+  background-color: var(--showmore-color);
+}
+
+.component-card:has(.icon-show-more) .card-content h2 {
+  color: var(--showmore-color);
+  text-shadow: 0 0 10px rgba(255, 235, 59, 0.2);
+}
+
+.component-card:has(.icon-show-more) .card-tag,
+.component-card:has(.icon-show-more) .card-arrow {
+  color: var(--showmore-color);
+}
+
+.component-card:has(.icon-show-more) .card-tag {
+  background-color: rgba(255, 235, 59, 0.15);
+}
+
+.component-card:has(.icon-show-more):hover .card-icon svg {
+  filter: drop-shadow(0 0 12px rgba(255, 235, 59, 0.6));
+}
+
+.icon-zoom-image {
+  color: var(--zoomimage-color);
+}
+
+.component-card:has(.icon-zoom-image)::before {
+  background-color: var(--zoomimage-color);
+}
+
+.component-card:has(.icon-zoom-image) .card-content h2 {
+  color: var(--zoomimage-color);
+  text-shadow: 0 0 10px rgba(142, 68, 173, 0.2);
+}
+
+.component-card:has(.icon-zoom-image) .card-tag,
+.component-card:has(.icon-zoom-image) .card-arrow {
+  color: var(--zoomimage-color);
+}
+
+.component-card:has(.icon-zoom-image) .card-tag {
+  background-color: rgba(142, 68, 173, 0.1);
+}
+
+.component-card:has(.icon-zoom-image):hover .card-icon svg {
+  filter: drop-shadow(0 0 8px rgba(142, 68, 173, 0.6));
+}
+
+/* Tooltip Component */
+.icon-tooltip {
+  color: var(--tooltip-color);
+}
+
+.component-card:has(.icon-tooltip)::before {
+  background-color: var(--tooltip-color);
+}
+
+.component-card:has(.icon-tooltip) .card-content h2 {
+  color: var(--tooltip-color);
+  text-shadow: 0 0 10px rgba(63, 81, 181, 0.2);
+}
+
+.component-card:has(.icon-tooltip) .card-tag,
+.component-card:has(.icon-tooltip) .card-arrow {
+  color: var(--tooltip-color);
+}
+
+.component-card:has(.icon-tooltip) .card-tag {
+  background-color: rgba(63, 81, 181, 0.1);
+}
+
+.component-card:has(.icon-tooltip):hover .card-icon svg {
+  filter: drop-shadow(0 0 8px rgba(63, 81, 181, 0.6));
+  transform: scale(1.05);
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popup Component - Componentes Web Personalizados</title>
+  <link rel="stylesheet" href="../index.css">
+<link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="../examples-styles.css">
+  <link rel="stylesheet" href="component-styles.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="popup-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver a inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Popup Component</h1>
+      <p>Componente web personalizado para crear ventanas emergentes (popups) con animaciones fluidas, contenido dinámico y capacidad para mostrar diferentes tipos de contenido como texto, imágenes y videos.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>Versatilidad</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Animaciones</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+      
+      <div class="examples-grid">
+        <!-- Ejemplo 1: Popup básico con contenido de texto -->
+        <div class="example">
+          <h3 class="example-title">Popup básico con contenido de texto</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <popup-component data-content-type="normal">
+  <div class="popup-component-button-wrapper">
+                    <button class="popup-component-button" data-popup-button-open>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14M5 12h14"></path>
+                      </svg>
+                      Ver términos y condiciones
+                    </button>
+  </div>
+
+  <div class="popup-component" data-popup>
+    <div class="popup-component-mask" data-popup-mask></div>
+
+    <div class="popup-component-content">
+                      <h2>Términos y Condiciones</h2>
+                      <div class="popup-content-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor quam vitae erat facilisis, nec convallis tellus posuere. Aenean imperdiet ligula id tellus cursus, at faucibus justo rhoncus.</p>
+                        <p>Sed viverra felis at est semper, nec cursus metus interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec eleifend libero ac risus efficitur, vel aliquet velit vestibulum.</p>
+                        <p>Curabitur sagittis, turpis vel placerat facilisis, erat magna luctus dui, ut bibendum est magna nec risus. Aliquam erat volutpat. Fusce semper urna at tellus accumsan, eu vulputate lorem pharetra.</p>
+                      </div>
+                      
+                      <div class="popup-component-icon-close-wrapper" data-popup-button-close>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </popup-component>
+                
+                <div class="example-controls">
+                  <button id="open-popup-1" class="button-action-primary">Abrir mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="popup-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="popup-component/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;popup-component data-content-type="normal"&gt;
+  &lt;div class="popup-component-button-wrapper"&gt;
+    &lt;button class="popup-component-button" data-popup-button-open&gt;
+      Ver términos y condiciones
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="popup-component" data-popup&gt;
+    &lt;div class="popup-component-mask" data-popup-mask&gt;&lt;/div&gt;
+
+    &lt;div class="popup-component-content"&gt;
+      &lt;h2&gt;Términos y Condiciones&lt;/h2&gt;
+      &lt;div class="popup-content-text"&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+        &lt;!-- Más contenido aquí --&gt;
+      &lt;/div&gt;
+      
+      &lt;div class="popup-component-icon-close-wrapper" 
+           data-popup-button-close&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/popup-component&gt;</code></pre>
+
+                <h4>JavaScript</h4>
+                <pre><code class="language-javascript">// Abrir el popup mediante JavaScript
+const popup = document.querySelector('popup-component');
+document.getElementById('open-popup').addEventListener('click', () => {
+  popup.openPopup();
+});</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Popup con video de YouTube -->
+        <div class="example">
+          <h3 class="example-title">Popup con video de YouTube</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <popup-component data-content-type="video">
+                  <div class="popup-component-button-wrapper">
+                    <button class="popup-component-button" data-popup-button-open>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      Ver video
+                    </button>
+                  </div>
+                
+                  <div class="popup-component" data-popup>
+                    <div class="popup-component-mask" data-popup-mask></div>
+                
+                    <div class="popup-component-content">
+                      <!-- Nota: Se usa un video de ejemplo de YouTube -->
+                      <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                      </iframe>
+                      
+                      <div class="popup-component-icon-close-wrapper" data-popup-button-close>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </popup-component>
+                
+                <p style="margin-top: 1rem;">
+                  Este ejemplo incluye un video de YouTube que se pausa automáticamente cuando se cierra el popup.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;popup-component data-content-type="video"&gt;
+  &lt;div class="popup-component-button-wrapper"&gt;
+    &lt;button class="popup-component-button" data-popup-button-open&gt;
+      Ver video
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="popup-component" data-popup&gt;
+    &lt;div class="popup-component-mask" data-popup-mask&gt;&lt;/div&gt;
+
+    &lt;div class="popup-component-content"&gt;
+      &lt;!-- Video de YouTube (con enablejsapi=1 para control) --&gt;
+      &lt;iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+              gyroscope; picture-in-picture" 
+        allowfullscreen&gt;
+      &lt;/iframe&gt;
+      
+      &lt;div class="popup-component-icon-close-wrapper" 
+           data-popup-button-close&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/popup-component&gt;</code></pre>
+
+                <h4>Atributos</h4>
+                <pre><code class="language-markup">&lt;!-- El atributo data-content-type="video" es importante para
+     que el componente pause automáticamente los videos
+     cuando se cierra el popup --&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 3: Popup para mostrar imagen ampliada -->
+        <div class="example">
+          <h3 class="example-title">Popup para mostrar imagen ampliada</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <popup-component data-content-type="normal">
+                  <div class="popup-component-button-wrapper">
+                    <div class="popup-component-image-button" data-popup-button-open>
+                      <img src="https://picsum.photos/id/237/200/150" alt="Miniatura de la imagen" width="200" height="150">
+                    </div>
+                  </div>
+                
+                  <div class="popup-component" data-popup>
+                    <div class="popup-component-mask" data-popup-mask></div>
+                
+                    <div class="popup-component-content">
+                      <img src="https://picsum.photos/id/237/800/600" alt="Imagen ampliada">
+
+      <div class="popup-component-icon-close-wrapper" data-popup-button-close>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </popup-component>
+                
+                <p style="margin-top: 1rem;">
+                  Haz clic en la imagen para verla ampliada. Este patrón es útil para galerías de imágenes o tiendas online.
+                </p>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;popup-component data-content-type="normal"&gt;
+  &lt;div class="popup-component-button-wrapper"&gt;
+    &lt;div class="popup-component-image-button" data-popup-button-open&gt;
+      &lt;img src="imagen-miniatura.jpg" alt="Miniatura de la imagen" 
+           width="200" height="150"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="popup-component" data-popup&gt;
+    &lt;div class="popup-component-mask" data-popup-mask&gt;&lt;/div&gt;
+
+    &lt;div class="popup-component-content"&gt;
+      &lt;img src="imagen-grande.jpg" alt="Imagen ampliada"&gt;
+      
+      &lt;div class="popup-component-icon-close-wrapper" 
+           data-popup-button-close&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/popup-component&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.popup-component-image-button {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-component-image-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}</code></pre>
+              </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- Ejemplo 4: Popup con estilo oscuro personalizado -->
+        <div class="example">
+          <h3 class="example-title">Popup con estilo oscuro personalizado</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <popup-component data-content-type="normal" id="dark-popup">
+                  <div class="popup-component-button-wrapper">
+                    <button class="popup-component-button" data-popup-button-open>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                      </svg>
+                      Abrir popup oscuro
+                    </button>
+                  </div>
+                
+                  <div class="popup-component" data-popup>
+                    <div class="popup-component-mask" data-popup-mask></div>
+                
+                    <div class="popup-component-content popup-component-dark">
+                      <h3>Popup con Modo Oscuro</h3>
+                      <p>Este es un ejemplo de popup con un estilo oscuro personalizado, ideal para interfaces con tema oscuro o para contenido que se ve mejor sobre fondos oscuros.</p>
+                      
+                      <p>Puedes personalizar cualquier aspecto del popup utilizando variables CSS y clases personalizadas.</p>
+                      
+                      <div class="popup-component-icon-close-wrapper" data-popup-button-close>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+</popup-component>
+                
+                <div class="example-controls">
+                  <button id="open-dark-popup" class="button-action-primary">Abrir mediante JavaScript</button>
+                </div>
+              </div>
+              
+              <div class="example-code">
+                <h4>HTML</h4>
+                <pre><code class="language-markup">&lt;div class="popup-component-content popup-component-dark"&gt;
+  &lt;h3&gt;Popup con Modo Oscuro&lt;/h3&gt;
+  &lt;p&gt;Este es un ejemplo de popup con un estilo oscuro...&lt;/p&gt;
+  
+  &lt;div class="popup-component-icon-close-wrapper" 
+       data-popup-button-close&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>CSS</h4>
+                <pre><code class="language-css">.popup-component-dark {
+  background-color: #252525;
+  color: #e0e0e0;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.popup-component-dark .popup-component-icon-close-wrapper {
+  color: #64b5f6;
+}
+
+.popup-component-dark .popup-component-icon-close-wrapper:hover {
+  color: white;
+}</code></pre>
+
+                <h4>Variables CSS</h4>
+                <pre><code class="language-css">.popup-component-content {
+  --popup-content-max-width: 600px;
+  --popup-content-padding: 25px;
+  --popup-content-border-radius: 8px;
+  --button-close-top: 15px;
+  --button-close-right: 15px;
+  --button-close-size-icon: 20px;
+  --button-close-asset-color: #64b5f6;
+  --button-close-asset-color-hover: white;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/popup-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<script src="index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ejemplo 1: Popup básico
+      const basicPopup = document.querySelector('popup-component');
+      document.getElementById('open-popup-1').addEventListener('click', function() {
+        basicPopup.openPopup();
+      });
+      
+      // Ejemplo 4: Popup oscuro
+      const darkPopup = document.getElementById('dark-popup');
+      document.getElementById('open-dark-popup').addEventListener('click', function() {
+        darkPopup.openPopup();
+      });
+    });
+  </script>
+</body>
+</html>

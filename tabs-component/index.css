@@ -1,0 +1,11 @@
+tabs-component {
+  --content-display-active: block;
+
+  & [data-tab-content] {
+    display: none;
+
+    &.active {
+      display: var(--content-display-active);
+    }
+  }
+}

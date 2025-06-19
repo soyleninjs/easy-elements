@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Component - Web Components</title>
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="component-styles.css">
+<link rel="stylesheet" href="index.css">
+  <!-- Agregar PrismJS para resaltado de código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="index.js" defer></script>
+</head>
+<body class="tabs-component-page">
+  <a href="../index.html" class="back-to-home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Volver al inicio
+  </a>
+
+  <div class="component-hero">
+    <div class="component-hero-content">
+      <h1>Tabs Component</h1>
+      <p>Un componente web personalizado para crear pestañas interactivas con contenido dinámico y opciones de personalización flexible.</p>
+      
+      <div class="component-features">
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 11 12 14 22 4"></polyline>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+          <span>Fácil de implementar</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span>Personalizable</span>
+        </div>
+        <div class="component-feature">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+          <span>Contenidos sincronizados</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="examples-section">
+      <h2>Ejemplos de uso</h2>
+
+      <div class="examples-grid">
+  <!-- Ejemplo 1: Uso básico -->
+        <div class="example">
+          <h3 class="example-title">Pestañas básicas</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+    <tabs-component>
+      <div class="tabs-component-buttons">
+        <div class="tabs-component-buttons-wrapper">
+          <button type="button" class="tabs-component-button active" data-tab-button>
+                        Información
+                      </button>
+                      <button type="button" class="tabs-component-button" data-tab-button>
+                        Características
+          </button>
+          <button type="button" class="tabs-component-button" data-tab-button>
+                        Reseñas
+          </button>
+        </div>
+      </div>
+
+      <div class="tabs-component-contents">
+        <div class="tabs-component-content active" data-tab-content>
+                      <h3>Información del producto</h3>
+                      <p>Este componente de pestañas proporciona una forma elegante y sencilla de organizar contenido en secciones.</p>
+                    </div>
+                    <div class="tabs-component-content" data-tab-content>
+                      <h3>Características principales</h3>
+                      <ul>
+                        <li>Implementación sencilla</li>
+                        <li>Personalización completa</li>
+                        <li>Navegación accesible</li>
+                      </ul>
+        </div>
+        <div class="tabs-component-content" data-tab-content>
+                      <h3>Reseñas de usuarios</h3>
+                      <div style="color: #ffb74d;">★★★★★</div>
+                      <p style="margin: 5px 0 0;">"Excelente componente."</p>
+        </div>
+      </div>
+    </tabs-component>
+  </div>
+
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Importar el componente --&gt;
+&lt;script src="tabs-component/index.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="tabs-component/index.css"&gt;
+
+&lt;!-- Implementación básica --&gt;
+&lt;tabs-component&gt;
+  &lt;div class="tabs-component-buttons"&gt;
+    &lt;div class="tabs-component-buttons-wrapper"&gt;
+      &lt;button type="button" class="tabs-component-button active" data-tab-button&gt;
+        Pestaña 1
+      &lt;/button&gt;
+      &lt;button type="button" class="tabs-component-button" data-tab-button&gt;
+        Pestaña 2
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="tabs-component-contents"&gt;
+    &lt;div class="tabs-component-content active" data-tab-content&gt;
+      Contenido de la pestaña 1
+    &lt;/div&gt;
+    &lt;div class="tabs-component-content" data-tab-content&gt;
+      Contenido de la pestaña 2
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tabs-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ejemplo 2: Tabs con nombres personalizados -->
+        <div class="example">
+          <h3 class="example-title">Pestañas con nombres personalizados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+    <tabs-component>
+      <div class="tabs-component-buttons">
+        <div class="tabs-component-buttons-wrapper">
+          <button type="button" class="tabs-component-button active" data-tab-button="descripcion">
+            Descripción
+          </button>
+          <button type="button" class="tabs-component-button" data-tab-button="especificaciones">
+            Especificaciones
+          </button>
+                      <button type="button" class="tabs-component-button" data-tab-button="garantia">
+                        Garantía
+                      </button>
+        </div>
+      </div>
+
+      <div class="tabs-component-contents">
+        <div class="tabs-component-content active" data-tab-content="descripcion">
+                      <h3>Descripción completa</h3>
+                      <p>El componente de pestañas permite asignar nombres personalizados a cada pestaña y su contenido correspondiente.</p>
+        </div>
+        <div class="tabs-component-content" data-tab-content="especificaciones">
+                      <h3>Especificaciones técnicas</h3>
+                      <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                          <td style="padding: 8px 0;">Peso:</td>
+                          <td style="padding: 8px 0;">Ligero (menos de 2KB)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                          <td style="padding: 8px 0;">Dependencias:</td>
+                          <td style="padding: 8px 0;">Ninguna</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="tabs-component-content" data-tab-content="garantia">
+                      <h3>Información de garantía</h3>
+                      <p>Este componente incluye soporte técnico gratuito y actualizaciones periódicas.</p>
+        </div>
+      </div>
+    </tabs-component>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Pestañas con nombres personalizados --&gt;
+&lt;tabs-component&gt;
+  &lt;div class="tabs-component-buttons"&gt;
+    &lt;div class="tabs-component-buttons-wrapper"&gt;
+      &lt;button type="button" class="tabs-component-button active" data-tab-button="descripcion"&gt;
+        Descripción
+      &lt;/button&gt;
+      &lt;button type="button" class="tabs-component-button" data-tab-button="especificaciones"&gt;
+        Especificaciones
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="tabs-component-contents"&gt;
+    &lt;div class="tabs-component-content active" data-tab-content="descripcion"&gt;
+      Contenido de la descripción
+    &lt;/div&gt;
+    &lt;div class="tabs-component-content" data-tab-content="especificaciones"&gt;
+      Contenido de las especificaciones
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tabs-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+  </div>
+
+  <!-- Ejemplo 3: Múltiples contenidos sincronizados -->
+        <div class="example">
+          <h3 class="example-title">Contenidos sincronizados</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+    <tabs-component data-aditional-contents="data-tab-related, data-tab-extra">
+      <!-- Botones de pestañas -->
+      <div class="tabs-component-buttons">
+        <div class="tabs-component-buttons-wrapper">
+                      <button type="button" class="tabs-component-button active" data-tab-button="basico">
+                        Plan Básico
+          </button>
+                      <button type="button" class="tabs-component-button" data-tab-button="estandar">
+                        Plan Estándar
+          </button>
+                      <button type="button" class="tabs-component-button" data-tab-button="premium">
+                        Plan Premium
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="tabs-component-contents">
+                    <div class="tabs-component-content active" data-tab-content="basico">
+                      <h3>Plan Básico</h3>
+                      <p><strong>Precio:</strong> Gratis</p>
+        </div>
+                    <div class="tabs-component-content" data-tab-content="estandar">
+                      <h3>Plan Estándar</h3>
+                      <p><strong>Precio:</strong> $9.99/mes</p>
+        </div>
+                    <div class="tabs-component-content" data-tab-content="premium">
+                      <h3>Plan Premium</h3>
+                      <p><strong>Precio:</strong> $19.99/mes</p>
+        </div>
+      </div>
+
+      <!-- Contenido relacionado -->
+      <div class="tabs-component-related-contents">
+                    <h4>Características incluidas:</h4>
+                    <div data-tab-related="basico" class="active">
+                      <ul>
+                        <li>Componente básico</li>
+                        <li>Documentación estándar</li>
+                      </ul>
+        </div>
+                    <div data-tab-related="estandar">
+                      <ul>
+                        <li>Todo lo del plan básico</li>
+                        <li>Soporte prioritario</li>
+                      </ul>
+        </div>
+                    <div data-tab-related="premium">
+                      <ul>
+                        <li>Todo lo del plan estándar</li>
+                        <li>Soporte 24/7</li>
+                      </ul>
+        </div>
+      </div>
+
+      <!-- Contenido extra -->
+      <div class="tabs-component-extra-contents">
+                    <h4>Recomendado para:</h4>
+                    <div data-tab-extra="basico" class="active">
+                      <p>Desarrolladores individuales</p>
+        </div>
+                    <div data-tab-extra="estandar">
+                      <p>Equipos de desarrollo</p>
+        </div>
+                    <div data-tab-extra="premium">
+                      <p>Empresas</p>
+        </div>
+      </div>
+    </tabs-component>
+              </div>
+              
+              <div class="example-code">
+                <h4>Código HTML</h4>
+                <pre><code class="language-markup">&lt;!-- Contenidos sincronizados --&gt;
+&lt;tabs-component data-aditional-contents="data-tab-related, data-tab-extra"&gt;
+  &lt;!-- Botones de pestañas --&gt;
+  &lt;div class="tabs-component-buttons"&gt;
+    &lt;div class="tabs-component-buttons-wrapper"&gt;
+      &lt;button type="button" class="tabs-component-button active" data-tab-button="basico"&gt;
+        Plan Básico
+      &lt;/button&gt;
+      &lt;button type="button" class="tabs-component-button" data-tab-button="premium"&gt;
+        Plan Premium
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Contenido principal --&gt;
+  &lt;div class="tabs-component-contents"&gt;
+    &lt;div class="tabs-component-content active" data-tab-content="basico"&gt;
+      Contenido del plan básico
+    &lt;/div&gt;
+    &lt;div class="tabs-component-content" data-tab-content="premium"&gt;
+      Contenido del plan premium
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Contenido relacionado (se sincroniza) --&gt;
+  &lt;div class="contenido-adicional"&gt;
+    &lt;div class="active" data-tab-related="basico"&gt;
+      Contenido relacionado del plan básico
+    &lt;/div&gt;
+    &lt;div data-tab-related="premium"&gt;
+      Contenido relacionado del plan premium
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Contenido extra (también se sincroniza) --&gt;
+  &lt;div class="otro-contenido"&gt;
+    &lt;div class="active" data-tab-extra="basico"&gt;
+      Contenido extra del plan básico
+    &lt;/div&gt;
+    &lt;div data-tab-extra="premium"&gt;
+      Contenido extra del plan premium
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/tabs-component&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+  </div>
+
+  <!-- Ejemplo 4: Personalización de estilo -->
+        <div class="example">
+          <h3 class="example-title">Personalización avanzada</h3>
+          <div class="example-content">
+            <div class="example-columns">
+              <div class="example-demo">
+                <tabs-component id="example-4-custom">
+      <div class="tabs-component-buttons">
+        <div class="tabs-component-buttons-wrapper">
+                      <button type="button" class="tabs-component-button active" data-tab-button="diseno">
+                        Diseño
+          </button>
+                      <button type="button" class="tabs-component-button" data-tab-button="funcionalidad">
+                        Funcionalidad
+          </button>
+                      <button type="button" class="tabs-component-button" data-tab-button="animaciones">
+                        Animaciones
+          </button>
+        </div>
+      </div>
+
+      <div class="tabs-component-contents">
+                    <div class="tabs-component-content active" data-tab-content="diseno">
+                      <h3>Personalización de diseño</h3>
+                      <p>El componente puede personalizarse completamente mediante CSS.</p>
+                    </div>
+                    <div class="tabs-component-content" data-tab-content="funcionalidad">
+                      <h3>Personalización de funcionalidad</h3>
+                      <p>Puedes personalizar el comportamiento del componente mediante eventos y atributos.</p>
+                    </div>
+                    <div class="tabs-component-content" data-tab-content="animaciones">
+                      <h3>Personalización de animaciones</h3>
+                      <p>Puedes añadir animaciones personalizadas para mejorar la experiencia de usuario.</p>
+                    </div>
+                  </div>
+                </tabs-component>
+        </div>
+              
+              <div class="example-code">
+                <h4>CSS personalizado</h4>
+                <pre><code class="language-css">/* Personalización de estilo */
+#example-4-custom .tabs-component-buttons-wrapper {
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  border-radius: 8px 8px 0 0;
+  padding: 8px 8px 0 8px;
+  border-bottom: 0;;
+}
+
+#example-4-custom .tabs-component-buttons-wrapper {
+  margin: 0;
+}
+
+#example-4-custom .tabs-component-button {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+#example-4-custom .tabs-component-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#example-4-custom .tabs-component-button.active {
+  color: #4a00e0;
+  background-color: #fff;
+}
+
+#example-4-custom .tabs-component-button.active::after {
+  display: none;
+}
+
+#example-4-custom .tabs-component-content {
+  background-color: #fff;
+  color: #333;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Personalización de animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#example-4-custom .tabs-component-content.active {
+  animation: slideIn 0.3s ease-out;
+}</code></pre>
+
+                <h4>JavaScript</h4>
+                <pre><code class="language-javascript">// Escuchar eventos de cambio de pestaña
+document.querySelector('tabs-component')
+  .addEventListener('tab-changed', (event) => {
+    console.log('Pestaña activa:', event.detail.tabName);
+  });
+
+// Seleccionar una pestaña programáticamente
+document.querySelector('tabs-component')
+  .selectTabByName('funcionalidad');</code></pre>
+        </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="component-docs-link">
+        <a href="https://github.com/soyleninjs/web-components/tree/main/tabs-component" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          Ver documentación completa
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Biblioteca de Componentes Web - <a href="https://github.com/soyleninjs" target="_blank">@soyleninjs</a></p>
+  </footer>
+
+  <!-- Agregar PrismJS para resaltado de código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+  <!-- Estilos personalizados para el ejemplo 4 -->
+  <style>
+    /* Personalización de estilo para el ejemplo 4 */
+    #example-4-custom .tabs-component-buttons-wrapper {
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
+      border-radius: 8px 8px 0 0;
+      padding: 8px 8px 0 8px;
+      border-bottom: 0;;
+    }
+    
+    #example-4-custom .tabs-component-buttons-wrapper {
+      margin: 0;
+    }
+
+    #example-4-custom .tabs-component-button {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      border-radius: 8px 8px 0 0;
+      padding: 12px 20px;
+      transition: all 0.3s ease;
+    }
+    
+    #example-4-custom .tabs-component-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    
+    #example-4-custom .tabs-component-button.active {
+      color: #4a00e0;
+      background-color: #fff;
+    }
+    
+    #example-4-custom .tabs-component-button.active::after {
+      display: none;
+    }
+    
+    #example-4-custom .tabs-component-content {
+      background-color: #fff;
+      color: #333;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    #example-4-custom .tabs-component-content.active {
+      animation: slideIn 0.3s ease-out;
+    }
+  </style>
+</body>
+</html>
