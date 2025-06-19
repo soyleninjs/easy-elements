@@ -372,10 +372,11 @@ footer a:hover {
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Responsive */
+/* Los estilos del botón "back-to-home" se han movido al archivo examples-styles.css */
+
 @media (max-width: 768px) {
   .component-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   
   .component-hero p {
@@ -388,6 +389,6 @@ footer a:hover {
   }
   
   .tabs-component-buttons-wrapper {
-    overflow-x: auto;
+    flex-direction: column;
   }
 } 

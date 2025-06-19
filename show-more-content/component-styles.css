@@ -262,16 +262,16 @@ footer a:hover {
 }
 
 /* Estilos específicos para show-more-content */
-.show-more-content-page [data-collapsable] {
+.showmore-component-page [data-collapsable] {
   position: relative;
   transition: max-height 0.3s ease;
 }
 
-.show-more-content-page [data-collapsable].collapsed {
+.showmore-component-page [data-collapsable].collapsed {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, transparent 100%);
 }
 
-.show-more-content-page [data-toggle-button] {
+.showmore-component-page [data-toggle-button] {
   display: inline-block;
   margin-top: 10px;
   color: var(--component-primary);
@@ -285,7 +285,7 @@ footer a:hover {
   transition: all 0.3s ease;
 }
 
-.show-more-content-page [data-toggle-button]:hover {
+.showmore-component-page [data-toggle-button]:hover {
   background-color: var(--component-primary);
   color: white;
 }
@@ -313,31 +313,7 @@ footer a:hover {
   margin: 5px 0;
 }
 
-.back-to-home {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 10;
-  transition: background-color var(--transition-speed);
-}
-
-.back-to-home:hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.back-to-home svg {
-  width: 16px;
-  height: 16px;
-}
+/* Los estilos del botón "back-to-home" se han movido al archivo examples-styles.css */
 
 @media (max-width: 768px) {
   .component-hero h1 {
