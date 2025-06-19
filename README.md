@@ -2,7 +2,7 @@
 
 Una colección de componentes web personalizados, independientes y reutilizables creados con JavaScript nativo, sin dependencias externas. Estos componentes están diseñados para ser fácilmente integrados en cualquier proyecto web.
 
-![Easy Elements - Biblioteca de Componentes Web](https://via.placeholder.com/1200x600/333/fff?text=Easy+Elements)
+![Easy Elements - Biblioteca de Componentes Web](https://placehold.co/1200x400/333/fff?text=Easy+Elements)
 
 ## 📋 Contenido
 
