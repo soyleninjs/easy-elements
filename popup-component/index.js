@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable curly */
 const nameCustomElement = "popup-component";
 class PopupComponent extends window.HTMLElement {
@@ -7,21 +8,27 @@ class PopupComponent extends window.HTMLElement {
     this.$popupMask = this.querySelector("[data-popup-mask]");
     this.$popupButtonsClose = this.querySelectorAll("[data-popup-button-close]");
     this.contentType = this.dataset.contentType || "normal";
+    this.openOnBody = Boolean(this.dataset.openOnBody);
 
+    this.handleEvents();
+  }
+
+  handleEvents() {
     this.$popupButtonOpen.addEventListener("click", () => this.openPopup());
     this.$popupMask.addEventListener("click", () => this.closePopup());
-    
-    // Agregar evento de clic a todos los botones de cierre
-    this.$popupButtonsClose.forEach(button => {
+
+    this.$popupButtonsClose.forEach((button) => {
       button.addEventListener("click", () => this.closePopup());
     });
   }
 
   openPopup() {
     this.$popup.classList.add("visible");
-    document.body.appendChild(this.$popup);
+    if (this.openOnBody) document.body.appendChild(this.$popup);
     document.body.style.overflow = "hidden";
-    document.body.classList.add("popup-component-is-open");
+    document.body.classList.add("popup-component-open");
+    if (this.contentType === "video") this.playVideoOnOpen();
+    window.dispatchEvent(new CustomEvent("popup-component-open", { detail: this }));
   }
 
   closePopup() {
@@ -29,10 +36,11 @@ class PopupComponent extends window.HTMLElement {
     if (this.contentType === "video") this.pauseVideos();
 
     window.setTimeout(() => {
-      this.appendChild(this.$popup);
       this.$popup.classList.remove("visible", "hidding");
       document.body.style.overflow = "unset";
-      document.body.classList.remove("popup-component-is-open");
+      document.body.classList.remove("popup-component-open");
+      if (this.openOnBody) this.appendChild(this.$popup);
+      window.dispatchEvent(new CustomEvent("popup-component-close", { detail: this }));
     }, 300);
   }
 
@@ -64,6 +72,22 @@ class PopupComponent extends window.HTMLElement {
       $iframes.forEach(($iframe) => {
         this.commandYoutubeApi($iframe, "pauseVideo");
       });
+    }
+  }
+
+  playVideoOnOpen() {
+    const $video = this.$popup.querySelector("video");
+    const $iframe = this.$popup.querySelector("iframe");
+
+    if ($video !== null) {
+      $video.play();
+    } else if ($iframe !== null) {
+      window.setTimeout(
+        () => {
+          this.commandYoutubeApi($iframe, "playVideo");
+        },
+        this.openOnBody ? 1000 : 100
+      );
     }
   }
 }
